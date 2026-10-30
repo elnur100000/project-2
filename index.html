@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELOCE CARS</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<body>
+  <header class="navbar">
+    <div class="container ">
+<div class="navbar-asosiy">
+   <div class="navbar-left">
+        <a href="#" class="logo">
+          <img src="./img/logo.svg" alt="">
+        </a>
+        <nav class="nav-links">
+          <a href="./index.html" class="nav-link active">Rent</a>
+          <a href="./buy/buy.html" class="nav-link">Buy</a>
+          <a href="#" class="nav-link">Sell</a>
+          <a href="#" class="nav-link">Brands</a>
+          <a href="#" class="nav-link">Journal</a>
+        </nav>
+      </div>
+
+      <div class="navbar-right">
+       <img src="./img/Margin.svg" alt="">
+        <a href="./garage/garage.html" class="btn-list-car">List your car</a>
+        <button class="mobile-toggle" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+</div>
+     
+      <div class="text-center">
+        <button
+          class="hidden nav-btn2 text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+          type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+          aria-controls="drawer-navigation">
+          <img src="./img/menu.svg" alt="Menu">
+        </button>
+      </div>
+
+      <div id="drawer-navigation"
+        class="nav-sidebar fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-neutral-primary-soft border-e border-default"
+        tabindex="-1" aria-labelledby="drawer-navigation-label">
+        <div class="border-b border-default pb-4 flex items-center">
+          <img src="./img/logo.svg" alt="Logo" class="">
+          </a>
+          <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+            class="text-body bg-transparent hover:text-heading hover:bg-neutral-tertiary rounded-base w-9 h-9 absolute top-2.5 end-2.5 flex items-center justify-center">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18 17.94 6M18 18 6.06 6" />
+            </svg>
+            <span class="sr-only">Close menu</span>
+          </button>
+        </div>
+        <div class="py-5 overflow-y-auto">
+          <ul class="py-2 font-medium flex gap-[3px] items-center flex-col gap-[5px]">
+            <li>
+              <a href="#"
+                class="flex items-center  text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group  ">
+
+                <span class="font-bold font-[16px] text-[##C4C9AE] ">Rent</span>
+              </a>
+            </li>
+            <li>
+              <button type="button"
+                class="flex items-center w-full justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+
+
+              </button>
+              <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                <li>
+                  <a href="#"
+                    class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                  </a>
+
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                <span class="font-bold font-[16px] text-[##C4C9AE]  flex-1 ms-3 whitespace-nowrap">
+                  Buy
+                </span>
+
+
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                <span class="font-bold font-[16px] text-[##C4C9AE] flex-1 ms-3 whitespace-nowrap">
+                  Sell
+                </span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+
+                <span class="font-bold font-[16px] text-[##C4C9AE] flex-1 ms-3 whitespace-nowrap">
+                  Brands
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="flex items-center  px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+
+                <span class="font-bold font-[16px] text-[##C4C9AE] flex-1 ms-3 whitespace-nowrap">
+                  Journals
+                </span>
+              </a>
+            </li>
+            <img src="./img/Margin.svg" alt="IMG" class="relative left-[px]">
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+  </header>
+  <main>
+    <section class="drive">
+      <div class="container">
+        <div class="drive-tepa">
+          <h2 class="drive-title">
+            Drive the extraordinary.
+            <span class="drive-title-span">
+              Rent it. Or own it.
+            </span>
+          </h2>
+          <div class="drive-infos">
+            <div class="drive-info">
+              <p class="drive-info-p">
+                1,200+
+              </p>
+              <p class="drive-info-p">
+                FLEET SIZE
+              </p>
+            </div>
+            <div class="line"></div>
+            <div class="drive-info">
+              <p class="drive-info-p">
+                24h
+              </p>
+              <p class="drive-info-p">
+                FAST DELIVERY
+              </p>
+            </div>
+            <div class="line"></div>
+            <div class="drive-info">
+              <p class="drive-info-p">
+                150K+
+              </p>
+              <p class="drive-info-p">
+                HAPPY CLIENTS
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="drive-past ">
+          <div class="drive-past-asosiy">
+            <img src="./img/porshe.jpg" alt="Img" class="drive-img">
+            <div class="cars-info">
+              <div class="cars-info-tepa">
+                <button class="info-btn">Rent </button>
+                <button class="info-btn">Buy</button>
+                <button class="info-btn">Sell</button>
+              </div>
+              <div class="cars-info-past">
+                <form class="cars">
+                  <label class="cars-title">
+                    LOCATION
+                    <input class="cars-inp" type="text" placeholder="📍 Beverly Hills, CA">
+                  </label>
+
+                  <label class="cars-title">
+                    DATE RANGE
+                    <input class="cars-inp" type="text" placeholder="🕜 24 Oct - 26 Oct">
+                  </label>
+
+                  <label class="cars-title">
+                    CAR BRAND
+                    <input class="cars-inp" type="text" placeholder="🚘 Porshe">
+                  </label>
+                  <a href="./porshe search/porshe.html" class="cars-btn">
+                    Search
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="carusel">
+      <div class="conatiner">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <span class="carousel-item">Mercedes-Benz</span>
+            <span class="carousel-item">BMW</span>
+            <span class="carousel-item">PORSCHE</span>
+            <span class="carousel-item">Audi</span>
+            <span class="carousel-item">FERRARI</span>
+            <span class="carousel-item">LAMBORGHINI</span>
+
+            <span class="carousel-item">Mercedes-Benz</span>
+            <span class="carousel-item">BMW</span>
+            <span class="carousel-item">PORSCHE</span>
+            <span class="carousel-item">Audi</span>
+            <span class="carousel-item">FERRARI</span>
+            <span class="carousel-item">LAMBORGHINI</span>
+
+            <span class="carousel-item">Mercedes-Benz</span>
+            <span class="carousel-item">BMW</span>
+            <span class="carousel-item">PORSCHE</span>
+            <span class="carousel-item">Audi</span>
+            <span class="carousel-item">FERRARI</span>
+            <span class="carousel-item">LAMBORGHINI</span>
+
+            <span class="carousel-item">Mercedes-Benz</span>
+            <span class="carousel-item">BMW</span>
+            <span class="carousel-item">PORSCHE</span>
+            <span class="carousel-item">Audi</span>
+            <span class="carousel-item">FERRARI</span>
+            <span class="carousel-item">LAMBORGHINI</span>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <section class="categories-section">
+      <div class="categories-header">
+        <div class="header-titles">
+          <span class="sub-title">CATEGORIES</span>
+          <h2 class="main-title">Browse by Category</h2>
+        </div>
+        <div class="nav-buttons">
+          <button class="nav-btn prev" aria-label="Previous">
+            &#10094;
+          </button>
+          <button class="nav-btn next" aria-label="Next">
+            &#10095;
+          </button>
+        </div>
+      </div>
+
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop"
+              alt="Sport">
+            <div class="card-content">
+              <h3>Sport</h3>
+              <p>42 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800&auto=format&fit=crop"
+              alt="SUV">
+            <div class="card-content">
+              <h3>SUV</h3>
+              <p>38 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop"
+              alt="Sedan">
+            <div class="card-content">
+              <h3>Sedan</h3>
+              <p>24 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop"
+              alt="Electric">
+            <div class="card-content">
+              <h3>Electric</h3>
+              <p>18 Vehicles Available</p>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop"
+              alt="Sport">
+            <div class="card-content">
+              <h3>Sport</h3>
+              <p>42 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800&auto=format&fit=crop"
+              alt="SUV">
+            <div class="card-content">
+              <h3>SUV</h3>
+              <p>38 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop"
+              alt="Sedan">
+            <div class="card-content">
+              <h3>Sedan</h3>
+              <p>24 Vehicles Available</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop"
+              alt="Electric">
+            <div class="card-content">
+              <h3>Electric</h3>
+              <p>18 Vehicles Available</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <section class="selection">
+        <div class="container">
+          <input type="radio" name="fleet-filter" id="filter-all" class="filter-radio" checked>
+          <input type="radio" name="fleet-filter" id="filter-hypercars" class="filter-radio">
+          <input type="radio" name="fleet-filter" id="filter-convertibles" class="filter-radio">
+          <input type="radio" name="fleet-filter" id="filter-daily" class="filter-radio">
+
+          <input type="checkbox" id="modal-car-1" class="modal-toggle">
+          <input type="checkbox" id="modal-car-2" class="modal-toggle">
+          <input type="checkbox" id="modal-car-3" class="modal-toggle">
+          <input type="checkbox" id="modal-car-4" class="modal-toggle">
+          <input type="checkbox" id="modal-car-5" class="modal-toggle">
+
+          <section class="fleet-section">
+            <div class="fleet-header">
+              <div class="header-titles">
+                <span class="sub-title">EXQUISITE SELECTION</span>
+                <h2 class="main-title">The Premium Fleet</h2>
+              </div>
+
+              <div class="filter-buttons">
+                <label for="filter-all" class="filter-btn btn-all">All</label>
+                <label for="filter-hypercars" class="filter-btn btn-hypercars">Hypercars</label>
+                <label for="filter-convertibles" class="filter-btn btn-convertibles">Convertibles</label>
+                <label for="filter-daily" class="filter-btn btn-daily">Daily Luxury</label>
+              </div>
+            </div>
+
+            <div class="cards-grid">
+
+              <div class="car-card hypercars">
+                <label for="modal-car-1" class="card-overlay-link"></label>
+                <div class="card-image-box">
+                  <div class="badge-verified">&#10004; Verified</div>
+                  <img
+                    src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800&auto=format&fit=crop"
+                    alt="Porsche 911">
+                </div>
+                <div>
+                  <div class="card-header">
+                    <h3 class="car-title">Porsche 911 Turbo S</h3>
+                    <span class="like-icon">&#9825;</span>
+                  </div>
+                  <div class="car-specs">
+                    <span class="spec-item">&#127950; 330km/h</span>
+                    <span class="spec-item">&#9889; 650hp</span>
+                    <span class="spec-item">&#9881; Auto</span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="price-box">
+                    <span class="old-price">$1,200/day</span>
+                    <span class="current-price">$950<span class="price-period">/day</span></span>
+                  </div>
+                  <label for="modal-car-1" class="rent-btn">Rent now</label>
+                </div>
+              </div>
+
+              <div class="car-card hypercars">
+                <label for="modal-car-2" class="card-overlay-link"></label>
+                <div class="card-image-box">
+                  <div class="badge-verified">&#10004; Verified</div>
+                  <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800&auto=format&fit=crop"
+                    alt="Lamborghini">
+                </div>
+                <div>
+                  <div class="card-header">
+                    <h3 class="car-title">Lamborghini Huracán</h3>
+                    <span class="like-icon">&#9825;</span>
+                  </div>
+                  <div class="car-specs">
+                    <span class="spec-item">&#127950; 325km/h</span>
+                    <span class="spec-item">&#9889; 640hp</span>
+                    <span class="spec-item">&#9881; Auto</span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="price-box">
+                    <span class="old-price">$1,500/day</span>
+                    <span class="current-price">$1,100<span class="price-period">/day</span></span>
+                  </div>
+                  <label for="modal-car-2" class="rent-btn">Rent now</label>
+                </div>
+              </div>
+
+              <!-- 3-KARTOCHKA -->
+              <div class="car-card convertibles">
+                <label for="modal-car-3" class="card-overlay-link"></label>
+                <div class="card-image-box">
+                  <div class="badge-verified">&#10004; Verified</div>
+                  <img
+                    src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop"
+                    alt="Ferrari">
+                </div>
+                <div>
+                  <div class="card-header">
+                    <h3 class="car-title">Ferrari F8 Spider</h3>
+                    <span class="like-icon">&#9825;</span>
+                  </div>
+                  <div class="car-specs">
+                    <span class="spec-item">&#127950; 340km/h</span>
+                    <span class="spec-item">&#9889; 720hp</span>
+                    <span class="spec-item">&#9881; Auto</span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="price-box">
+                    <span class="old-price">$1,600/day</span>
+                    <span class="current-price">$1,300<span class="price-period">/day</span></span>
+                  </div>
+                  <label for="modal-car-3" class="rent-btn">Rent now</label>
+                </div>
+              </div>
+
+              <!-- 4-KARTOCHKA -->
+              <div class="car-card daily">
+                <label for="modal-car-4" class="card-overlay-link"></label>
+                <div class="card-image-box">
+                  <img
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop"
+                    alt="Mercedes AMG">
+                </div>
+                <div>
+                  <div class="card-header">
+                    <h3 class="car-title">Mercedes AMG GT</h3>
+                    <span class="like-icon">&#9825;</span>
+                  </div>
+                  <div class="car-specs">
+                    <span class="spec-item">&#127950; 315km/h</span>
+                    <span class="spec-item">&#9889; 585hp</span>
+                    <span class="spec-item">&#9881; Auto</span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="price-box">
+                    <span class="old-price">$900/day</span>
+                    <span class="current-price">$750<span class="price-period">/day</span></span>
+                  </div>
+                  <label for="modal-car-4" class="rent-btn">Rent now</label>
+                </div>
+              </div>
+
+              <div class="car-card daily">
+                <label for="modal-car-5" class="card-overlay-link"></label>
+                <div class="card-image-box">
+                  <div class="badge-verified">&#10004; Verified</div>
+                  <img
+                    src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?q=80&w=800&auto=format&fit=crop"
+                    alt="Rolls Royce">
+                </div>
+                <div>
+                  <div class="card-header">
+                    <h3 class="car-title">Rolls-Royce Ghost</h3>
+                    <span class="like-icon">&#9825;</span>
+                  </div>
+                  <div class="car-specs">
+                    <span class="spec-item">&#127950; 250km/h</span>
+                    <span class="spec-item">&#9889; 563hp</span>
+                    <span class="spec-item">&#9881; Auto</span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="price-box">
+                    <span class="old-price">$2,000/day</span>
+                    <span class="current-price">$1,600<span class="price-period">/day</span></span>
+                  </div>
+                  <label for="modal-car-5" class="rent-btn">Rent now</label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+        </div>
+      </section>
+    </section>
+    <section class="split-banner container">
+
+      <div class="banner-content">
+        <span class="sub-title">SELL YOUR CAR</span>
+        <h2 class="main-title">Sell your car in 24 hours.</h2>
+
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h3>Get an Instant Quote</h3>
+              <p>Input your car details and get a market-based valuation in seconds.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h3>Free Inspection</h3>
+              <p>We come to you. Our specialists conduct a rapid 20-point diagnostic.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h3>Immediate Payment</h3>
+              <p>Walk away with cash or bank transfer once the keys are handed over.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="appraisal-btn">Start Appraisal</a>
+      </div>
+
+      <div class="banner-image">
+        <img src="./img/Image (5).svg" alt="Car Key">
+      </div>
+
+
+    </section>
+    <section class="deals-section container">
+      <div class="timer-badge">
+        <span class="timer-icon">&#9200;</span>
+        <span class="timer-text">ENDS IN: <strong>23:59:53</strong></span>
+      </div>
+
+      <div class="deals-grid">
+
+        <div class="deal-card">
+          <div class="card-media">
+            <span class="discount-badge">-15% OFF</span>
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800&auto=format&fit=crop"
+              alt="Lamborghini Huracán EVO">
+          </div>
+          <div class="card-details">
+            <h3 class="car-name">Lamborghini Huracán EVO</h3>
+            <div class="price-container">
+              <div class="price-info">
+                <span class="old-price">$2,500</span>
+                <span class="new-price">$2,125 <small>/day</small></span>
+              </div>
+              <button class="claim-btn">Claim Offer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card">
+          <div class="card-media">
+            <span class="discount-badge">-20% OFF</span>
+            <img src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?q=80&w=800&auto=format&fit=crop"
+              alt="Rolls-Royce Phantom">
+          </div>
+          <div class="card-details">
+            <h3 class="car-name">Rolls-Royce Phantom</h3>
+            <div class="price-container">
+              <div class="price-info">
+                <span class="old-price">$3,000</span>
+                <span class="new-price">$2,400 <small>/day</small></span>
+              </div>
+              <button class="claim-btn">Claim Offer</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section class="why-velooe-section">
+      <div class="features-grid container">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <h3>Total Assurance</h3>
+          <p>Comprehensive insurance and 24/7 roadside assistance included with every rental.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <h3>Pristine Fleet</h3>
+          <p>Every vehicle undergoes a 150-point inspection and professional detailing before delivery.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <h3>Doorstep Delivery</h3>
+          <p>We deliver and collect the vehicle anywhere within our service radius for zero friction.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg>
+          </div>
+          <h3>No Hidden Fees</h3>
+          <p>Transparent pricing. What you see is exactly what you pay. No surprises at checkout.</p>
+        </div>
+
+      </div>
+    </section>
+    <section class="social-proof-container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Retention Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12k+</div>
+          <div class="stat-label">Annual Bookings</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5.0</div>
+          <div class="stat-label">Trustpilot Score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24h</div>
+          <div class="stat-label">Customer Support</div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div>
+            <div class="card-header">
+              <div class="stars">★★★★★</div>
+              <div class="quote-mark">”</div>
+            </div>
+            <p class="quote-text">"Veloce completely redefined my expectations for luxury rentals. The delivery was
+              seamless, and the car was in showroom condition. Unbeatable service."</p>
+          </div>
+          <div class="user-info">
+            <div class="avatar"></div>
+            <div class="user-details">
+              <h4>Julian Thorne</h4>
+              <p>Hedge Fund Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="card-header">
+              <div class="stars">★★★★★</div>
+              <div class="quote-mark">”</div>
+            </div>
+            <p class="quote-text">"Selling my Ferrari was painless. I received a fair market quote and the payment was
+              in my account before the transport truck left my driveway."</p>
+          </div>
+          <div class="user-info">
+            <div class="avatar"></div>
+            <div class="user-details">
+              <h4>Sarah Williams</h4>
+              <p>Private Collector</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="card-header">
+              <div class="stars">★★★★★</div>
+              <div class="quote-mark">”</div>
+            </div>
+            <p class="quote-text">"The curation of the fleet is what sets them apart. They don't just have luxury cars;
+              they have the absolute best specifications of those cars."</p>
+          </div>
+          <div class="user-info">
+            <div class="avatar"></div>
+            <div class="user-details">
+              <h4>Michael Chen</h4>
+              <p>Architect</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="journal-section">
+      <div class="journal-container">
+        <header class="journal-header">
+          <div class="header-title">
+            <span class="journal-subtitle">THE JOURNAL</span>
+            <h2>Editorial Insights</h2>
+          </div>
+          <div class="view-all-wrapper">
+            <a href="#" class="view-all">View All Articles</a>
+          </div>
+        </header>
+
+        <div class="journal-grid ">
+          <div class="journal-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                alt="Coastal Drives">
+              <span class="category-badge">LIFESTYLE</span>
+            </div>
+
+          </div>
+
+          <div class="journal-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80"
+                alt="Hybrid Performance">
+              <span class="category-badge">TECH</span>
+            </div>
+
+          </div>
+
+          <div class="journal-card">
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+                alt="Classic Automotive Icons">
+              <span class="category-badge">CLASSICS</span>
+
+            </div>
+          </div>
+        </div>
+    </section>
+
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-column brand-column">
+        <h2 class="logo">VELOCE</h2>
+        <p class="description">
+          Curating the world's most extraordinary automotive experiences since 2018.[cite: 2]
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-btn">
+            <i class="fa-solid fa-share-nodes">
+              <img src="./img/Container (3).svg" alt="">
+            </i></a>
+          <a href="#" class="social-btn">
+            <i class="fa-solid fa-globe">
+              <img src="./img/Container (4).svg" alt="">
+            </i></a>
+          <a href="#" class="social-btn"><i class="fa-solid fa-at">
+              <img src="./img/Icon (1).svg" alt="">
+            </i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Fleet</h3>
+        <ul class="footer-links">
+          <li><a href="#">Luxury Sedans</a></li>
+          <li><a href="#">Sports Cars</a></li>
+          <li><a href="#">Performance SUVs</a></li>
+          <li><a href="#">Electric & Hybrid</a></li>
+          <li><a href="#">Exotic Specials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column newsletter-column">
+        <h3>Newsletter</h3>
+        <p class="description">
+          Subscribe for early access to new fleet arrivals and exclusive deals.[cite: 2]
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email Address" required />
+          <a href="./reg/reg.html" type="submit" class="newsletter-btn">
+            <i class="fa-solid fa-paper-plane"><img src="./img/Container (5).svg" alt=""></a>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 VELOCE LUXURY AUTOMOTIVE. ALL RIGHTS RESERVED.[cite: 2]</p>
+      <div class="bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>
