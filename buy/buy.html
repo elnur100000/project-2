@@ -1,330 +1,729 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalog - VELOCE</title>
-  <link rel="stylesheet" href="./buy.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCE - Luxury Car Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#CCFF00',
+                            hover: '#B3E600',
+                            dark: '#0A0A0A',
+                            card: '#141414',
+                            border: '#262626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    screens: {
+                        'nav-m': '651px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0A0A0A; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #CCFF00; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glow-brand { box-shadow: 0 0 20px rgba(204, 255, 0, 0.15); }
+    </style>
 </head>
-<body>
+<body class="bg-[#0A0A0A] text-white antialiased custom-scrollbar">
 
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-left">
-        <a href="#" class="brand-logo">VELOCE</a>
-        <nav class="nav-menu">
-          <a href="../index.html" class="nav-link">Rent</a>
-          <a href="./buy.html" class="nav-link active">Buy</a>
-          <a href="#" class="nav-link">Sell</a>
-          <a href="#" class="nav-link">Brands</a>
-          <a href="#" class="nav-link">Journal</a>
-        </nav>
-      </div>
-      <div class="nav-right">
-        <button class="icon-btn" aria-label="Language">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </button>
-        <button class="icon-btn" aria-label="Favorites">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
-        </button>
-        <button class="icon-btn cart-btn" aria-label="Cart">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-        </button>
-        <button class="btn-list-car">List your car</button>
-      </div>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#262626]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-8">
+                    <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
+                        VELOCE<span class="w-2 h-2 rounded-full bg-brand"></span>
+                    </a>
+                    <nav class="hidden nav-m:flex space-x-6 text-sm font-medium text-gray-300">
+                        <a href="../index.html" class="hover:text-brand transition-colors">Rent</a>
+                        <a href="../buy/buy.html" class="text-brand font-bold transition-colors">Buy</a>
+                        <a href="../sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
+                        <a href="../brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
+                        <a href="../journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
+                    </nav>
+                </div>
+
+                <div class="hidden nav-m:flex items-center space-x-5">
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </button>
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
+                        <i class="fa-regular fa-heart text-lg"></i>
+                        <span id="fav-badge" class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
+                    </button>
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    </button>
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-extrabold text-xs px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105">
+                        List your car
+                    </button>
+                </div>
+
+                <div class="flex nav-m:hidden items-center gap-3">
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-bold text-xs px-3.5 py-2 rounded-full">
+                        Register
+                    </button>
+                    <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#141414] w-80 border-r border-[#262626]" tabindex="-1">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-black tracking-widest text-white">VELOCE<span class="text-brand">.</span></span>
+            <button type="button" data-drawer-hide="drawer-navigation" class="text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="py-4">
+            <ul class="space-y-4 font-medium text-base">
+                <li><a href="../index.html" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Rent</a></li>
+                <li><a href="./buy.html" data-drawer-hide="drawer-navigation" class="block text-brand font-bold py-2">Buy (Premium Fleet)</a></li>
+                <li><a href="../sell/sell.html" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Sell Your Car</a></li>
+                <li><a href="#categories" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Brands & Categories</a></li>
+                <li><a href="#journal" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Journal</a></li>
+                <li><a href="#faq" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">FAQ</a></li>
+            </ul>
+            <div class="pt-8 border-t border-[#262626] mt-8">
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" data-drawer-hide="drawer-navigation" class="w-full bg-brand text-black font-extrabold py-3 rounded-xl hover:bg-brand-hover transition-colors text-sm">
+                    List Your Car / Register
+                </button>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <main class="page-content">
-    <div class="container">
-      
-      <div class="catalog-layout">
-        
-        <aside class="filters-sidebar">
-          <div class="filter-group-header">
-            <h3>Filters</h3>
-            <span>Refine your search</span>
-          </div>
+   
+   
 
-          <div class="filter-section">
-            <label class="filter-label">SEARCH</label>
-            <div class="filter-search-input">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" placeholder="Porsche, Ferrari...">
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <div class="range-header">
-              <label class="filter-label">PRICE RANGE</label>
-              <span class="range-value">$120k - $950k</span>
-            </div>
-            <div class="range-slider">
-              <div class="range-track"></div>
-              <div class="range-thumb left"></div>
-              <div class="range-thumb right"></div>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <label class="filter-label">BRANDS</label>
-            <div class="checkbox-group">
-              <label class="checkbox-item">
-                <input type="checkbox" checked>
-                <span class="checkmark"></span>
-                <span class="brand-name">Porsche</span>
-                <span class="count">124</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                <span class="brand-name">Ferrari</span>
-                <span class="count">88</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                <span class="brand-name">Lamborghini</span>
-                <span class="count">52</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                <span class="brand-name">Aston Martin</span>
-                <span class="count">24</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <label class="filter-label">BODY TYPE</label>
-            <div class="body-types-grid">
-              <button class="type-btn active">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 1 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-                <span>Coupe</span>
-              </button>
-              <button class="type-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 1 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-                <span>Convertible</span>
-              </button>
-              <button class="type-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 1 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-                <span>Sedan</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <label class="filter-label">TRANSMISSION</label>
-            <div class="transmission-toggle">
-              <button class="trans-btn">Automatic</button>
-              <button class="trans-btn active">Manual</button>
-            </div>
-          </div>
-        </aside>
-
-        <section class="catalog-content">
-          
-          <div class="catalog-header">
-            <div class="breadcrumb">Catalog / <span>Premium Fleet</span></div>
-            <h1 class="catalog-title">PREMIUM FLEET</h1>
-            
-            <div class="catalog-toolbar">
-              <div class="active-tags">
-                <span class="tag">Porsche <button>×</button></span>
-                <span class="tag">Coupe <button>×</button></span>
-                <button class="clear-all-btn">Clear all</button>
-              </div>
-
-              <div class="toolbar-actions">
-                <div class="view-switch">
-                  <button class="view-btn active" aria-label="Grid View">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                  </button>
-                  <button class="view-btn" aria-label="List View">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                  </button>
+    <section id="catalog" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-8 items-start relative">
+            <aside class="hidden lg:block w-72 shrink-0 bg-[#141414] p-6 rounded-2xl border border-[#262626] sticky top-28 space-y-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Filters</h3>
+                        <p class="text-xs text-gray-400">Refine your search</p>
+                    </div>
+                    <button onclick="resetAllFilters()" class="text-xs text-brand hover:underline font-semibold">Reset</button>
                 </div>
 
-                <div class="sort-dropdown">
-                  <span>Sort by: <strong>Newest First</strong></span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">SEARCH</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-500 text-xs"></i>
+                            <input type="text" id="search-input" oninput="applyFilters()" placeholder="Model, keyword..." class="w-full bg-[#0A0A0A] border border-[#262626] rounded-xl pl-9 pr-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand transition-colors">
+                        </div>
+                    </div>
 
-          <div class="cars-grid">
-            
-            <div class="catalog-card">
-              <div class="card-img">
-                <span class="badge verified">VELOCE VERIFIED</span>
-                <button class="like-btn" aria-label="Favorite">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </button>
-                <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop" alt="911 GT3 RS">
-              </div>
-              <div class="card-body">
-                <div class="card-title-row">
-                  <h3>911 GT3 RS</h3>
-                  <span class="price">$345,000</span>
-                </div>
-                <div class="card-meta">2024 • 2,400 mi</div>
-                <div class="card-specs">
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 197 mph</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 518 hp</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 12h12"/></svg> Manual</span>
-                </div>
-              </div>
-            </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-semibold uppercase tracking-wider text-gray-400">MAX PRICE RANGE</label>
+                            <span id="price-value" class="text-xs text-brand font-bold">$3,500,000</span>
+                        </div>
+                        <input type="range" id="price-slider" min="120000" max="3500000" step="50000" value="3500000" oninput="updatePriceLabel(this.value); applyFilters();" class="w-full accent-brand bg-[#262626] h-1.5 rounded-lg appearance-none cursor-pointer">
+                    </div>
 
-            <div class="catalog-card">
-              <div class="card-img">
-                <button class="like-btn" aria-label="Favorite">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </button>
-                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" alt="SF90 Stradale">
-              </div>
-              <div class="card-body">
-                <div class="card-title-row">
-                  <h3>SF90 Stradale</h3>
-                  <span class="price">$789,000</span>
-                </div>
-                <div class="card-meta">2023 • 500 mi</div>
-                <div class="card-specs">
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 986 hp</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 2.5s</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Hybrid</span>
-                </div>
-              </div>
-            </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">BRANDS</label>
+                        <div class="space-y-2 text-xs max-h-48 overflow-y-auto custom-scrollbar pr-1">
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Porsche" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Porsche
+                                </span>
+                                <span class="text-gray-500 text-[10px]">5</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Ferrari" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Ferrari
+                                </span>
+                                <span class="text-gray-500 text-[10px]">5</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Lamborghini" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Lamborghini
+                                </span>
+                                <span class="text-gray-500 text-[10px]">4</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Aston Martin" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Aston Martin
+                                </span>
+                                <span class="text-gray-500 text-[10px]">3</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Mercedes-Benz" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Mercedes-Benz
+                                </span>
+                                <span class="text-gray-500 text-[10px]">3</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="McLaren" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> McLaren
+                                </span>
+                                <span class="text-gray-500 text-[10px]">3</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Bugatti" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Bugatti
+                                </span>
+                                <span class="text-gray-500 text-[10px]">1</span>
+                            </label>
+                            <label class="flex items-center justify-between cursor-pointer group">
+                                <span class="flex items-center gap-2 text-gray-300 group-hover:text-white">
+                                    <input type="checkbox" value="Rolls-Royce" onchange="applyFilters()" class="brand-checkbox rounded bg-[#0A0A0A] border-[#262626] text-brand focus:ring-0 cursor-pointer"> Rolls-Royce
+                                </span>
+                                <span class="text-gray-500 text-[10px]">1</span>
+                            </label>
+                        </div>
+                    </div>
 
-            <div class="catalog-card">
-              <div class="card-img">
-                <span class="badge limited">LIMITED EDITION</span>
-                <button class="like-btn" aria-label="Favorite">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                </button>
-                <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" alt="Revuelto">
-              </div>
-              <div class="card-body">
-                <div class="card-title-row">
-                  <h3>Revuelto</h3>
-                  <span class="price">$920,000</span>
-                </div>
-                <div class="card-meta">2024 • New</div>
-                <div class="card-specs">
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 1001 hp</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2.5s</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> PHEV</span>
-                </div>
-              </div>
-            </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">BODY TYPE</label>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <button type="button" onclick="setBodyTypeFilter('All')" class="body-btn bg-brand text-black font-bold p-2.5 rounded-xl text-center border border-brand transition-all" data-type="All">
+                                All Types
+                            </button>
+                            <button type="button" onclick="setBodyTypeFilter('Coupe')" class="body-btn bg-[#0A0A0A] text-gray-400 hover:text-white p-2.5 rounded-xl text-center border border-[#262626] transition-all" data-type="Coupe">
+                                Coupe
+                            </button>
+                            <button type="button" onclick="setBodyTypeFilter('Convertible')" class="body-btn bg-[#0A0A0A] text-gray-400 hover:text-white p-2.5 rounded-xl text-center border border-[#262626] transition-all" data-type="Convertible">
+                                Convertible
+                            </button>
+                            <button type="button" onclick="setBodyTypeFilter('SUV')" class="body-btn bg-[#0A0A0A] text-gray-400 hover:text-white p-2.5 rounded-xl text-center border border-[#262626] transition-all" data-type="SUV">
+                                SUV
+                            </button>
+                            <button type="button" onclick="setBodyTypeFilter('Sedan')" class="body-btn bg-[#0A0A0A] text-gray-400 hover:text-white p-2.5 rounded-xl text-center border border-[#262626] transition-all" data-type="Sedan">
+                                Sedan
+                            </button>
+                        </div>
+                    </div>
 
-          </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">TRANSMISSION</label>
+                        <div class="grid grid-cols-3 gap-1 p-1 bg-[#0A0A0A] border border-[#262626] rounded-xl text-xs">
+                            <button type="button" onclick="setTransmissionFilter('All')" class="trans-btn py-2 font-bold bg-brand text-black rounded-lg transition-all" data-trans="All">All</button>
+                            <button type="button" onclick="setTransmissionFilter('Automatic')" class="trans-btn py-2 text-gray-400 hover:text-white transition-all" data-trans="Automatic">Auto</button>
+                            <button type="button" onclick="setTransmissionFilter('Manual')" class="trans-btn py-2 text-gray-400 hover:text-white transition-all" data-trans="Manual">Manual</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
 
-          <div class="horizontal-card">
-            <div class="h-card-img">
-              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" alt="DBS Volante">
+            <main class="flex-grow w-full space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <div class="text-xs text-gray-400 mb-1">Catalog / <span class="text-white font-medium">Exquisite Fleet</span></div>
+                        <h1 class="text-3xl font-black text-white tracking-tight uppercase">PREMIUM FLEET</h1>
+                    </div>
+
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                        <button data-drawer-target="drawer-filter" data-drawer-show="drawer-filter" aria-controls="drawer-filter" class="lg:hidden flex items-center gap-2 bg-[#141414] border border-[#262626] text-xs font-bold px-4 py-2.5 rounded-xl">
+                            <i class="fa-solid fa-sliders text-brand"></i> Filters
+                        </button>
+
+                        <div class="text-xs text-gray-400">
+                            Showing <span id="visible-count" class="text-brand font-bold">4</span> of <span id="total-count" class="text-white font-bold">25</span>
+                        </div>
+
+                        <div class="flex bg-[#141414] p-1 border border-[#262626] rounded-xl">
+                            <button id="btn-grid-view" onclick="setViewMode('grid')" class="p-2 text-brand bg-[#262626] rounded-lg transition-all"><i class="fa-solid fa-border-all"></i></button>
+                            <button id="btn-list-view" onclick="setViewMode('list')" class="p-2 text-gray-400 hover:text-white rounded-lg transition-all"><i class="fa-solid fa-list"></i></button>
+                        </div>
+
+                        <select id="sort-select" onchange="applyFilters()" class="bg-[#141414] border border-[#262626] text-white text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-brand">
+                            <option value="newest">Sort: Newest First</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="hp-desc">Power: Highest HP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="active-pills" class="flex flex-wrap items-center gap-2"></div>
+
+                <div id="car-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+
+                <div id="empty-state" class="hidden bg-[#141414] border border-[#262626] rounded-2xl p-12 text-center my-8">
+                    <div class="w-16 h-16 bg-[#222] rounded-full flex items-center justify-center mx-auto mb-4 text-gray-500 text-2xl">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">No cars found</h3>
+                    <p class="text-xs text-gray-400 max-w-sm mx-auto mt-2">We couldn't find any hypercars matching your current search parameters. Clear your filters to see available fleet.</p>
+                    <button onclick="resetAllFilters()" class="mt-6 bg-brand hover:bg-brand-hover text-black font-bold text-xs px-6 py-3 rounded-xl transition-colors">
+                        Reset All Filters
+                    </button>
+                </div>
+
+                <div class="flex justify-center pt-8">
+                    <button id="show-more-btn" onclick="toggleShowAll()" class="bg-brand text-black font-extrabold text-xs px-8 py-4 rounded-xl hover:bg-brand-hover transition-all transform hover:scale-105 shadow-lg glow-brand flex items-center gap-2">
+                        <span>Davomini ko'rish (Explore All 25+ Cars)</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <div id="drawer-filter" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#141414] w-80 border-r border-[#262626]" tabindex="-1">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Filter Cars</h3>
+            <button type="button" data-drawer-hide="drawer-filter" class="text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="space-y-6 text-xs">
+            <div>
+                <label class="block font-semibold uppercase text-gray-400 mb-2">SEARCH</label>
+                <input type="text" id="drawer-search-input" oninput="syncMobileSearch(this.value)" placeholder="Model..." class="w-full bg-[#0A0A0A] border border-[#262626] rounded-xl px-3 py-2 text-white">
             </div>
-            <div class="h-card-content">
-              <div class="h-card-header">
+            <button data-drawer-hide="drawer-filter" onclick="applyFilters()" class="w-full bg-brand text-black font-bold py-3 rounded-xl">
+                Apply Filters
+            </button>
+        </div>
+    </div>
+
+    <section id="sell" class="py-16 bg-[#141414] border-y border-[#262626]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3>DBS Volante</h3>
-                  <div class="card-meta">2023 • 1,200 mi • Tungsten Silver</div>
+                    <span class="text-brand text-xs font-bold tracking-widest uppercase">SELL YOUR VEHICLE</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6">Get your valuation in 24 hours.</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">1</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Instant Digital Quote</h4>
+                                <p class="text-xs text-gray-400 mt-1">Submit car specifications to receive an official evaluation from our global automotive experts.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">2</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Free Doorstep Inspection</h4>
+                                <p class="text-xs text-gray-400 mt-1">We schedule a professional multi-point inspection at your private residence or location.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">3</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Immediate Settlement</h4>
+                                <p class="text-xs text-gray-400 mt-1">Instant wire payment with complete title transfer handling on the same day.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="mt-8 bg-white hover:bg-gray-200 text-black font-extrabold text-xs px-8 py-3.5 rounded-xl transition-all">
+                        Request Valuation
+                    </button>
                 </div>
-                <div class="price">$425,000</div>
-              </div>
-              <p class="h-card-desc">
-                Experience ultimate grand touring with this meticulously maintained DBS featuring a twin-turbo V12 engine and handcrafted leather interior...
-              </p>
-              <div class="h-card-footer">
-                <div class="card-specs">
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 715 hp</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3.4s</span>
-                  <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> V12 Petrol</span>
+
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden border border-[#262626] shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop" class="w-full h-[380px] object-cover">
+                    </div>
                 </div>
-                <button class="btn-inquire">Inquire Now</button>
-              </div>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <div class="no-results-box">
-            <div class="no-results-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                <line x1="8" y1="8" x2="14" y2="14"></line>
-              </svg>
+    <footer class="bg-[#0A0A0A] border-t border-[#262626] pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6 pb-8 border-b border-[#262626]">
+                <div>
+                    <span class="text-2xl font-black text-white tracking-widest">VELOCE<span class="text-brand">.</span></span>
+                    <p class="text-xs text-gray-500 mt-1">Curating rare automotive specimens globally.</p>
+                </div>
+                <div class="flex gap-6 text-gray-400">
+                    <a href="#" class="hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-brand"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
-            <h3>No cars found</h3>
-            <p>We couldn't find any results matching your current filters. Try adjusting your search criteria or clear all filters.</p>
-            <button class="btn-reset">Reset All Filters</button>
-          </div>
+            <p class="text-[11px] text-gray-600 mt-6 text-center">© 2026 VELOCE Luxury Automotive Group. All rights reserved.</p>
+        </div>
+    </footer>
 
-         
-
-        </section>
-
-      </div>
-
+    <div id="auth-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-[#141414] border border-[#262626] rounded-2xl shadow-2xl overflow-hidden">
+                <div class="flex items-center justify-between p-4 border-b border-[#262626]">
+                    <h3 class="text-lg font-black text-white">VELOCE <span class="text-brand">Account</span></h3>
+                    <button type="button" class="text-gray-400 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="auth-modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Signed in successfully!');">
+                        <div>
+                            <label class="block mb-2 text-xs font-semibold text-gray-300">Email Address</label>
+                            <input type="email" class="bg-[#0A0A0A] border border-[#262626] text-white text-xs rounded-xl focus:border-brand block w-full p-3" placeholder="client@veloce.com" required>
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-xs font-semibold text-gray-300">Password</label>
+                            <input type="password" class="bg-[#0A0A0A] border border-[#262626] text-white text-xs rounded-xl focus:border-brand block w-full p-3" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="w-full text-black bg-brand hover:bg-brand-hover font-extrabold rounded-xl text-xs px-5 py-3 text-center">Sign In / Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h2 class="footer-logo">VELOCE</h2>
-          <p>The world's most exclusive automotive marketplace. Curating fine specimens for the most discerning collectors since 1998.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Global"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></a>
-            <a href="#" aria-label="Contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-          </div>
+    <div id="car-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-xl max-h-full">
+            <div class="relative bg-[#141414] border border-[#262626] rounded-2xl shadow-2xl overflow-hidden">
+                <div class="flex items-center justify-between p-4 border-b border-[#262626]">
+                    <h3 id="modal-car-title" class="text-lg font-extrabold text-white">Car Reservation</h3>
+                    <button type="button" class="text-gray-400 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="car-modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <img id="modal-car-img" src="" class="w-full h-52 object-cover rounded-xl mb-4 border border-[#262626]">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <span class="text-[10px] text-gray-400 uppercase">Valuation / Price</span>
+                            <span id="modal-car-price" class="text-2xl font-black text-brand block">$0</span>
+                        </div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-check mr-1"></i> Verified Spec</span>
+                    </div>
+
+                    <div id="modal-car-specs" class="grid grid-cols-3 gap-2 p-3 bg-[#0A0A0A] rounded-xl border border-[#262626] text-center text-xs text-gray-300 mb-6"></div>
+
+                    <button type="button" data-modal-hide="car-modal" onclick="alert('Inquiry submitted! Concierge will connect shortly.')" class="w-full bg-brand hover:bg-brand-hover text-black font-extrabold text-xs py-3.5 rounded-xl transition-all">
+                        Inquire / Request Purchase
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#">Fleet</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 VELOCE LUXURY AUTOMOTIVE. ALL RIGHTS RESERVED.</p>
-      </div>
     </div>
-  </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        const CAR_DATASET = [
+            { id: 1, name: "911 GT3 RS", brand: "Porsche", price: 345000, year: 2024, mileage: "2,400 mi", speed: "197 mph", hp: 518, trans: "Manual", body: "Coupe", badge: "VELOCE VERIFIED", badgeColor: "bg-brand text-black", img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop" },
+            { id: 2, name: "SF90 Stradale", brand: "Ferrari", price: 789000, year: 2023, mileage: "500 mi", speed: "211 mph", hp: 986, trans: "Automatic", body: "Coupe", badge: "HYBRID", badgeColor: "bg-red-600 text-white", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" },
+            { id: 3, name: "Revuelto", brand: "Lamborghini", price: 920000, year: 2024, mileage: "New", speed: "217 mph", hp: 1001, trans: "Automatic", body: "Coupe", badge: "LIMITED EDITION", badgeColor: "bg-amber-400 text-black", img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" },
+            { id: 4, name: "DBS Volante", brand: "Aston Martin", price: 425000, year: 2023, mileage: "1,200 mi", speed: "211 mph", hp: 715, trans: "Automatic", body: "Convertible", badge: "V12 TWIN TURBO", badgeColor: "bg-gray-200 text-black", img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop" },
+            { id: 5, name: "Chiron Super Sport", brand: "Bugatti", price: 3500000, year: 2023, mileage: "400 mi", speed: "273 mph", hp: 1578, trans: "Automatic", body: "Coupe", badge: "HYPERCAR", badgeColor: "bg-indigo-600 text-white", img: "https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=600&auto=format&fit=crop" },
+            { id: 6, name: "Urus Performante", brand: "Lamborghini", price: 320000, year: 2024, mileage: "1,800 mi", speed: "190 mph", hp: 657, trans: "Automatic", body: "SUV", badge: "SUPER SUV", badgeColor: "bg-emerald-500 text-black", img: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop" },
+            { id: 7, name: "720S Spider", brand: "McLaren", price: 385000, year: 2023, mileage: "3,100 mi", speed: "212 mph", hp: 710, trans: "Automatic", body: "Convertible", badge: "SPIDER", badgeColor: "bg-orange-500 text-white", img: "https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" },
+            { id: 8, name: "Taycan Turbo S", brand: "Porsche", price: 215000, year: 2024, mileage: "New", speed: "162 mph", hp: 750, trans: "Automatic", body: "Sedan", badge: "ELECTRIC", badgeColor: "bg-cyan-400 text-black", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" },
+            { id: 9, name: "AMG G 63 6x6", brand: "Mercedes-Benz", price: 850000, year: 2022, mileage: "4,500 mi", speed: "130 mph", hp: 577, trans: "Automatic", body: "SUV", badge: "RARE OFFROAD", badgeColor: "bg-amber-600 text-white", img: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=600&auto=format&fit=crop" },
+            { id: 10, name: "Rolls-Royce Ghost", brand: "Rolls-Royce", price: 450000, year: 2024, mileage: "900 mi", speed: "155 mph", hp: 563, trans: "Automatic", body: "Sedan", badge: "ULTRA LUXURY", badgeColor: "bg-purple-600 text-white", img: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" },
+            { id: 11, name: "812 GTS", brand: "Ferrari", price: 610000, year: 2023, mileage: "1,100 mi", speed: "211 mph", hp: 789, trans: "Automatic", body: "Convertible", badge: "ATMOSPHERIC V12", badgeColor: "bg-red-700 text-white", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" },
+            { id: 12, name: "911 Turbo S", brand: "Porsche", price: 275000, year: 2024, mileage: "1,500 mi", speed: "205 mph", hp: 640, trans: "Automatic", body: "Coupe", badge: "ALL-WEATHER", badgeColor: "bg-brand text-black", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" },
+            { id: 13, name: "Huracán Sterrato", brand: "Lamborghini", price: 390000, year: 2024, mileage: "New", speed: "162 mph", hp: 602, trans: "Automatic", body: "Coupe", badge: "ALL-TERRAIN", badgeColor: "bg-yellow-500 text-black", img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" },
+            { id: 14, name: "DBX707", brand: "Aston Martin", price: 295000, year: 2024, mileage: "2,000 mi", speed: "193 mph", hp: 697, trans: "Automatic", body: "SUV", badge: "FASTEST SUV", badgeColor: "bg-teal-500 text-black", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" },
+            { id: 15, name: "AMG GT Black Series", brand: "Mercedes-Benz", price: 480000, year: 2022, mileage: "800 mi", speed: "202 mph", hp: 720, trans: "Automatic", body: "Coupe", badge: "TRACK EDITION", badgeColor: "bg-zinc-200 text-black", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" },
+            { id: 16, name: "Roma Spider", brand: "Ferrari", price: 290000, year: 2024, mileage: "New", speed: "199 mph", hp: 612, trans: "Automatic", body: "Convertible", badge: "ELEGANT", badgeColor: "bg-red-500 text-white", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" },
+            { id: 17, name: "765LT Coupe", brand: "McLaren", price: 540000, year: 2023, mileage: "950 mi", speed: "205 mph", hp: 755, trans: "Automatic", body: "Coupe", badge: "LONGTAIL", badgeColor: "bg-orange-600 text-white", img: "https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" },
+            { id: 18, name: "Panamera Turbo S", brand: "Porsche", price: 220000, year: 2024, mileage: "1,200 mi", speed: "196 mph", hp: 620, trans: "Automatic", body: "Sedan", badge: "EXECUTIVE", badgeColor: "bg-blue-600 text-white", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" },
+            { id: 19, name: "Purosangue", brand: "Ferrari", price: 650000, year: 2024, mileage: "300 mi", speed: "193 mph", hp: 715, trans: "Automatic", body: "SUV", badge: "FOUR DOOR V12", badgeColor: "bg-red-800 text-white", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" },
+            { id: 20, name: "S 680 Maybach", brand: "Mercedes-Benz", price: 310000, year: 2024, mileage: "New", speed: "155 mph", hp: 621, trans: "Automatic", body: "Sedan", badge: "FIRST CLASS", badgeColor: "bg-gray-400 text-black", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" },
+            { id: 21, name: "718 Cayman GT4 RS", brand: "Porsche", price: 210000, year: 2023, mileage: "3,400 mi", speed: "196 mph", hp: 493, trans: "Manual", body: "Coupe", badge: "MID-ENGINE", badgeColor: "bg-brand text-black", img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop" },
+            { id: 22, name: "Vantage Roadster", brand: "Aston Martin", price: 195000, year: 2024, mileage: "500 mi", speed: "190 mph", hp: 503, trans: "Automatic", body: "Convertible", badge: "ROADSTER", badgeColor: "bg-slate-200 text-black", img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop" },
+            { id: 23, name: "298 GTB", brand: "Ferrari", price: 340000, year: 2024, mileage: " New", speed: "205 mph", hp: 819, trans: "Automatic", body: "Coupe", badge: "HYBRID V6", badgeColor: "bg-red-600 text-white", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" },
+            { id: 24, name: "Artura", brand: "McLaren", price: 240000, year: 2024, mileage: "600 mi", speed: "205 mph", hp: 671, trans: "Automatic", body: "Coupe", badge: "PHEV", badgeColor: "bg-orange-500 text-white", img: "https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" },
+            { id: 25, name: "Countach LPI 800-4", brand: "Lamborghini", price: 2600000, year: 2022, mileage: "120 mi", speed: "221 mph", hp: 803, trans: "Automatic", body: "Coupe", badge: "LEGEND EDITION", badgeColor: "bg-amber-500 text-black", img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" }
+        ];
+
+        let state = {
+            showAll: false,
+            viewMode: 'grid',
+            selectedBody: 'All',
+            selectedTrans: 'All',
+            selectedBrands: [],
+            maxPrice: 3500000,
+            searchQuery: '',
+            sort: 'newest',
+            favorites: []
+        };
+
+        function scrollCategories(amt) {
+            document.getElementById('category-container').scrollBy({ left: amt, behavior: 'smooth' });
+        }
+
+        function updatePriceLabel(val) {
+            state.maxPrice = parseInt(val);
+            document.getElementById('price-value').innerText = `$${parseInt(val).toLocaleString()}`;
+        }
+
+        function syncMobileSearch(val) {
+            document.getElementById('search-input').value = val;
+            applyFilters();
+        }
+
+        function setBodyTypeFilter(type) {
+            state.selectedBody = type;
+            document.querySelectorAll('.body-btn').forEach(btn => {
+                if (btn.getAttribute('data-type') === type) {
+                    btn.className = 'body-btn bg-brand text-black font-bold p-2.5 rounded-xl text-center border border-brand transition-all';
+                } else {
+                    btn.className = 'body-btn bg-[#0A0A0A] text-gray-400 hover:text-white p-2.5 rounded-xl text-center border border-[#262626] transition-all';
+                }
+            });
+            applyFilters();
+        }
+
+        function selectCategoryFilter(type) {
+            setBodyTypeFilter(type);
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function setTransmissionFilter(trans) {
+            state.selectedTrans = trans;
+            document.querySelectorAll('.trans-btn').forEach(btn => {
+                if (btn.getAttribute('data-trans') === trans) {
+                    btn.className = 'trans-btn py-2 font-bold bg-brand text-black rounded-lg transition-all';
+                } else {
+                    btn.className = 'trans-btn py-2 text-gray-400 hover:text-white transition-all';
+                }
+            });
+            applyFilters();
+        }
+
+        function setViewMode(mode) {
+            state.viewMode = mode;
+            const gridBtn = document.getElementById('btn-grid-view');
+            const listBtn = document.getElementById('btn-list-view');
+            
+            if (mode === 'grid') {
+                gridBtn.className = 'p-2 text-brand bg-[#262626] rounded-lg transition-all';
+                listBtn.className = 'p-2 text-gray-400 hover:text-white rounded-lg transition-all';
+            } else {
+                listBtn.className = 'p-2 text-brand bg-[#262626] rounded-lg transition-all';
+                gridBtn.className = 'p-2 text-gray-400 hover:text-white rounded-lg transition-all';
+            }
+            renderGrid();
+        }
+
+        function toggleShowAll() {
+            state.showAll = !state.showAll;
+            const btn = document.getElementById('show-more-btn');
+            if (state.showAll) {
+                btn.innerHTML = `<span>Show Less</span> <i class="fa-solid fa-chevron-up text-xs"></i>`;
+            } else {
+                btn.innerHTML = `<span>Davomini ko'rish (Explore All 25+ Cars)</span> <i class="fa-solid fa-chevron-down text-xs"></i>`;
+            }
+            renderGrid();
+        }
+
+        function toggleFav(id) {
+            const idx = state.favorites.indexOf(id);
+            if (idx > -1) {
+                state.favorites.splice(idx, 1);
+            } else {
+                state.favorites.push(id);
+            }
+            renderGrid();
+        }
+
+        function resetAllFilters() {
+            state.selectedBody = 'All';
+            state.selectedTrans = 'All';
+            state.selectedBrands = [];
+            state.maxPrice = 3500000;
+            state.searchQuery = '';
+            
+            document.getElementById('search-input').value = '';
+            document.getElementById('price-slider').value = 3500000;
+            document.getElementById('price-value').innerText = '$3,500,000';
+            
+            document.querySelectorAll('.brand-checkbox').forEach(cb => cb.checked = false);
+            setBodyTypeFilter('All');
+            setTransmissionFilter('All');
+            applyFilters();
+        }
+
+        function applyFilters() {
+            state.searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            state.sort = document.getElementById('sort-select').value;
+            state.selectedBrands = Array.from(document.querySelectorAll('.brand-checkbox:checked')).map(cb => cb.value);
+
+            renderPills();
+            renderGrid();
+        }
+
+        function renderPills() {
+            const container = document.getElementById('active-pills');
+            container.innerHTML = '';
+            let hasPill = false;
+
+            if (state.selectedBody !== 'All') {
+                hasPill = true;
+                container.innerHTML += `<span class="bg-[#141414] border border-[#262626] text-xs text-gray-300 px-3 py-1.5 rounded-full flex items-center gap-2">Type: ${state.selectedBody} <i onclick="setBodyTypeFilter('All')" class="fa-solid fa-xmark text-gray-500 hover:text-white cursor-pointer"></i></span>`;
+            }
+
+            if (state.selectedTrans !== 'All') {
+                hasPill = true;
+                container.innerHTML += `<span class="bg-[#141414] border border-[#262626] text-xs text-gray-300 px-3 py-1.5 rounded-full flex items-center gap-2">Trans: ${state.selectedTrans} <i onclick="setTransmissionFilter('All')" class="fa-solid fa-xmark text-gray-500 hover:text-white cursor-pointer"></i></span>`;
+            }
+
+            state.selectedBrands.forEach(brand => {
+                hasPill = true;
+                container.innerHTML += `<span class="bg-[#141414] border border-[#262626] text-xs text-gray-300 px-3 py-1.5 rounded-full flex items-center gap-2">${brand} <i onclick="removeBrandFilter('${brand}')" class="fa-solid fa-xmark text-gray-500 hover:text-white cursor-pointer"></i></span>`;
+            });
+
+            if (state.maxPrice < 3500000) {
+                hasPill = true;
+                container.innerHTML += `<span class="bg-[#141414] border border-[#262626] text-xs text-gray-300 px-3 py-1.5 rounded-full flex items-center gap-2">< $${state.maxPrice.toLocaleString()} <i onclick="updatePriceLabel(3500000); document.getElementById('price-slider').value=3500000; applyFilters();" class="fa-solid fa-xmark text-gray-500 hover:text-white cursor-pointer"></i></span>`;
+            }
+
+            if (hasPill) {
+                container.innerHTML += `<button onclick="resetAllFilters()" class="text-xs text-brand font-bold hover:underline ml-2">Clear all</button>`;
+            }
+        }
+
+        function removeBrandFilter(brand) {
+            document.querySelectorAll('.brand-checkbox').forEach(cb => {
+                if (cb.value === brand) cb.checked = false;
+            });
+            applyFilters();
+        }
+
+        function getFilteredDataset() {
+            return CAR_DATASET.filter(car => {
+                const matchSearch = car.name.toLowerCase().includes(state.searchQuery) || car.brand.toLowerCase().includes(state.searchQuery);
+                const matchPrice = car.price <= state.maxPrice;
+                const matchBody = state.selectedBody === 'All' || car.body === state.selectedBody;
+                const matchTrans = state.selectedTrans === 'All' || car.trans === state.selectedTrans;
+                const matchBrand = state.selectedBrands.length === 0 || state.selectedBrands.includes(car.brand);
+
+                return matchSearch && matchPrice && matchBody && matchTrans && matchBrand;
+            }).sort((a, b) => {
+                if (state.sort === 'price-asc') return a.price - b.price;
+                if (state.sort === 'price-desc') return b.price - a.price;
+                if (state.sort === 'hp-desc') return b.hp - a.hp;
+                return b.id - a.id;
+            });
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('car-grid');
+            const emptyState = document.getElementById('empty-state');
+            const filtered = getFilteredDataset();
+
+            document.getElementById('total-count').innerText = CAR_DATASET.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                document.getElementById('visible-count').innerText = '0';
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            const limit = state.showAll ? filtered.length : 4;
+            const visibleCars = filtered.slice(0, limit);
+
+            document.getElementById('visible-count').innerText = visibleCars.length;
+
+            if (state.viewMode === 'grid') {
+                grid.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6';
+                grid.innerHTML = visibleCars.map(car => `
+                    <div class="bg-[#141414] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <span class="absolute top-3 left-3 ${car.badgeColor} text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">${car.badge}</span>
+                                <button onclick="toggleFav(${car.id})" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                                    <i class="${state.favorites.includes(car.id) ? 'fa-solid fa-heart text-brand' : 'fa-regular fa-heart'}"></i>
+                                </button>
+                                <img src="${car.img}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">${car.name}</h3>
+                                        <p class="text-xs text-gray-400 mt-0.5">${car.brand} • ${car.year} • ${car.mileage}</p>
+                                    </div>
+                                    <span class="text-lg font-black text-brand">$${car.price.toLocaleString()}</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 mt-4 py-3 border-t border-[#262626] text-center text-[10px] text-gray-400">
+                                    <div><i class="fa-solid fa-gauge text-brand block mb-1 text-xs"></i> ${car.speed}</div>
+                                    <div><i class="fa-solid fa-bolt text-brand block mb-1 text-xs"></i> ${car.hp} HP</div>
+                                    <div><i class="fa-solid fa-gear text-brand block mb-1 text-xs"></i> ${car.trans}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <button onclick="openCarModal(${car.id})" data-modal-target="car-modal" data-modal-toggle="car-modal" class="w-full bg-brand text-black font-extrabold text-xs py-2.5 rounded-xl hover:bg-brand-hover transition-colors">
+                                Inquire / View Spec
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                grid.className = 'space-y-4';
+                grid.innerHTML = visibleCars.map(car => `
+                    <div class="bg-[#141414] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all p-4 flex flex-col sm:flex-row items-center gap-5 group">
+                        <img src="${car.img}" class="w-full sm:w-48 h-36 object-cover rounded-xl shrink-0">
+                        <div class="flex-grow w-full">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] text-brand font-bold uppercase">${car.brand}</span>
+                                    <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">${car.name}</h3>
+                                    <p class="text-xs text-gray-400">${car.year} • ${car.mileage} • ${car.body}</p>
+                                </div>
+                                <span class="text-xl font-black text-brand">$${car.price.toLocaleString()}</span>
+                            </div>
+                            <div class="flex gap-6 mt-4 text-xs text-gray-400 border-t border-[#262626] pt-3">
+                                <span><i class="fa-solid fa-gauge text-brand"></i> ${car.speed}</span>
+                                <span><i class="fa-solid fa-bolt text-brand"></i> ${car.hp} HP</span>
+                                <span><i class="fa-solid fa-gear text-brand"></i> ${car.trans}</span>
+                            </div>
+                        </div>
+                        <button onclick="openCarModal(${car.id})" data-modal-target="car-modal" data-modal-toggle="car-modal" class="w-full sm:w-auto bg-brand text-black font-extrabold text-xs px-6 py-3 rounded-xl hover:bg-brand-hover transition-colors shrink-0">
+                            Inquire Spec
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function openCarModal(id) {
+            const car = CAR_DATASET.find(c => c.id === id);
+            if (!car) return;
+
+            document.getElementById('modal-car-title').innerText = `${car.brand} ${car.name}`;
+            document.getElementById('modal-car-price').innerText = `$${car.price.toLocaleString()}`;
+            document.getElementById('modal-car-img').setAttribute('src', car.img);
+
+            document.getElementById('modal-car-specs').innerHTML = `
+                <div><span class="block text-[10px] text-gray-500 uppercase">Power</span> <strong class="text-white">${car.hp} HP</strong></div>
+                <div><span class="block text-[10px] text-gray-500 uppercase">Top Speed</span> <strong class="text-white">${car.speed}</strong></div>
+                <div><span class="block text-[10px] text-gray-500 uppercase">Gearbox</span> <strong class="text-white">${car.trans}</strong></div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGrid();
+        });
+    </script>
 </body>
 </html>

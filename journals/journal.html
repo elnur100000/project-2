@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCE - Personal Garage Journal & Wishlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#CCFF00',
+                            lime: '#CCFF00',
+                            dark: '#0B0B0B',
+                            card: '#141414',
+                            border: '#262626'
+                        }
+                    },
+                    screens: { 'nav-m': '650px' }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brand-dark text-white antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
+                    VELOCE<span class="text-brand">.</span>
+                </a>
+                <nav class="hidden nav-m:flex items-center gap-8 text-sm font-medium">
+                    <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Rent</a>
+                    <a href="../buy/buy.html" class="text-gray-400 hover:text-white transition-colors">Buy</a>
+                    <a href="../sell/sell.html" class="text-gray-400 hover:text-white transition-colors">Sell</a>
+                    <a href="../brand/brand.html" class="text-gray-400 hover:text-white transition-colors">Brands</a>
+                    <a href="./journal.html" class="text-brand font-bold border-b-2 border-brand pb-1">Journal</a>
+                </nav>
+                <div class="hidden nav-m:flex items-center gap-4">
+                    <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="bg-brand text-black font-bold px-5 py-2.5 rounded-full text-sm hover:bg-lime-400 transition-all">
+                        My Garage
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow py-10">
+        
+        <!-- HEADER TITLE -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-brand text-xs font-bold tracking-widest uppercase">OWNERSHIP HISTORY</span>
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-2">GARAGE JOURNAL</h1>
+            <p class="text-gray-400 text-sm mt-3">Track all bought, sold, and future dream cars in your personal collection log.</p>
+        </div>
+
+        <!-- SECTION 1: WISH LIST CAROUSEL (SOTIB OLINISHI REJALASHTIRILGAN) -->
+        <section class="mb-16 bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <span class="text-brand text-xs font-bold uppercase tracking-widest">FUTURE TARGETS</span>
+                    <h2 class="text-2xl font-black text-white mt-1">Wishlist / Next Purchases</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="document.getElementById('wishlist-container').scrollBy({left: -320, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-brand-dark border border-brand-border hover:border-brand flex items-center justify-center text-gray-300 hover:text-brand">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="document.getElementById('wishlist-container').scrollBy({left: 320, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-brand-dark border border-brand-border hover:border-brand flex items-center justify-center text-gray-300 hover:text-brand">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="wishlist-container" class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth pb-2">
+                <!-- Target 1 -->
+                <div class="snap-start flex-none w-[280px] sm:w-[320px] bg-brand-dark border border-brand-border rounded-2xl p-5 hover:border-brand transition-all">
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <span class="bg-brand/10 text-brand text-[10px] font-black px-2 py-0.5 rounded">TARGET: Q3 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2">Bugatti Tourbillon</h3>
+                    <p class="text-xs text-gray-400">Target Budget: $4,100,000</p>
+                    <p class="text-xs text-gray-500 mt-2">Status: Allocation Reserved with Bugatti Molsheim</p>
+                </div>
+                <!-- Target 2 -->
+                <div class="snap-start flex-none w-[280px] sm:w-[320px] bg-brand-dark border border-brand-border rounded-2xl p-5 hover:border-brand transition-all">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <span class="bg-brand/10 text-brand text-[10px] font-black px-2 py-0.5 rounded">TARGET: Q4 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2">Porsche 918 Spyder</h3>
+                    <p class="text-xs text-gray-400">Target Budget: $1,850,000</p>
+                    <p class="text-xs text-gray-500 mt-2">Status: Searching Liquid Metal Silver specimen</p>
+                </div>
+                <!-- Target 3 -->
+                <div class="snap-start flex-none w-[280px] sm:w-[320px] bg-brand-dark border border-brand-border rounded-2xl p-5 hover:border-brand transition-all">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <span class="bg-brand/10 text-brand text-[10px] font-black px-2 py-0.5 rounded">TARGET: 2027</span>
+                    <h3 class="text-lg font-bold text-white mt-2">Ferrari F40 (1990)</h3>
+                    <p class="text-xs text-gray-400">Target Budget: $2,900,000</p>
+                    <p class="text-xs text-gray-500 mt-2">Status: Classiche Certified search in Italy</p>
+                </div>
+                <!-- Target 4 -->
+                <div class="snap-start flex-none w-[280px] sm:w-[320px] bg-brand-dark border border-brand-border rounded-2xl p-5 hover:border-brand transition-all">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=600" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <span class="bg-brand/10 text-brand text-[10px] font-black px-2 py-0.5 rounded">TARGET: 2027</span>
+                    <h3 class="text-lg font-bold text-white mt-2">Pagani Utopia Manual</h3>
+                    <p class="text-xs text-gray-400">Target Budget: $3,200,000</p>
+                    <p class="text-xs text-gray-500 mt-2">Status: Direct inquiry sent to Horacio Pagani Studio</p>
+                </div>
+                <!-- Target 5 -->
+                <div class="snap-start flex-none w-[280px] sm:w-[320px] bg-brand-dark border border-brand-border rounded-2xl p-5 hover:border-brand transition-all">
+                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <span class="bg-brand/10 text-brand text-[10px] font-black px-2 py-0.5 rounded">TARGET: 2028</span>
+                    <h3 class="text-lg font-bold text-white mt-2">Koenigsegg Gemera</h3>
+                    <p class="text-xs text-gray-400">Target Budget: $2,100,000</p>
+                    <p class="text-xs text-gray-500 mt-2">Status: Waiting for client test drives</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BOUGHT vs SOLD TABS -->
+        <div class="flex justify-center border-b border-brand-border mb-8">
+            <button id="tab-bought-btn" onclick="switchTab('bought')" class="px-8 py-4 text-base font-bold border-b-2 border-brand text-brand flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping"></i> Bought Cars (10)
+            </button>
+            <button id="tab-sold-btn" onclick="switchTab('sold')" class="px-8 py-4 text-base font-bold border-b-2 border-transparent text-gray-400 hover:text-white flex items-center gap-2">
+                <i class="fa-solid fa-handshake"></i> Sold Cars (10)
+            </button>
+        </div>
+
+        <!-- TAB 1: BOUGHT CARS -->
+        <div id="bought-section" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bought 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: MARCH 14, 2025</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Porsche 911 GT3 RS</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $365,000</p>
+                        <p><strong>Bought From:</strong> Porsche Center Dubai</p>
+                        <p><strong>Contact:</strong> +971 4 321 8899</p>
+                        <p><strong>Mileage at Purchase:</strong> 420 mi</p>
+                    </div>
+                </div>
+                <!-- Bought 2 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: NOV 02, 2024</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Ferrari SF90 Stradale</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $580,000</p>
+                        <p><strong>Bought From:</strong> Private Collector (Marco R.)</p>
+                        <p><strong>Contact:</strong> marco.ferrari@private.it</p>
+                        <p><strong>Mileage at Purchase:</strong> 1,100 mi</p>
+                    </div>
+                </div>
+                <!-- Bought 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: JAN 18, 2024</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Lamborghini Revuelto</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $690,000</p>
+                        <p><strong>Bought From:</strong> Lamborghini Geneva</p>
+                        <p><strong>Contact:</strong> sales@lambo-geneva.ch</p>
+                        <p><strong>Mileage at Purchase:</strong> Delivery Miles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REST BOUGHT CARS (HIDDEN INITIALLY) -->
+            <div id="extra-bought" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                <!-- Bought 4 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: AUGUST 2023</span>
+                    <h3 class="font-bold text-lg text-white mt-1">McLaren 765LT Spider</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $490,000 | <strong>From:</strong> McLaren London</p>
+                        <p><strong>Contact:</strong> +44 20 7581 0150</p>
+                    </div>
+                </div>
+                <!-- Bought 5 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: MAY 2023</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Rolls-Royce Cullinan BB</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $440,000 | <strong>From:</strong> RR Beverly Hills</p>
+                    </div>
+                </div>
+                <!-- Bought 6 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: FEB 2022</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Aston Martin DBS Superleggera</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $310,000 | <strong>From:</strong> AM Monaco</p>
+                    </div>
+                </div>
+                <!-- Bought 7 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: OCT 2021</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Mercedes-AMG GT Black Series</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $420,000 | <strong>From:</strong> AMG Affalterbach</p>
+                    </div>
+                </div>
+                <!-- Bought 8 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: MAY 2020</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Ferrari 488 Pista</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $380,000 | <strong>From:</strong> Private Owner</p>
+                    </div>
+                </div>
+                <!-- Bought 9 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: DEC 2019</span>
+                    <h3 class="font-bold text-lg text-white mt-1">BMW M5 CS</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $145,000 | <strong>From:</strong> BMW Munich</p>
+                    </div>
+                </div>
+                <!-- Bought 10 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-brand font-bold">BOUGHT: AUG 2018</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Audi R8 V10 Decennium</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Price:</strong> $210,000 | <strong>From:</strong> Audi Ingolstadt</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-more-bought" onclick="toggleMore('bought')" class="mt-6 bg-brand text-black font-extrabold px-8 py-3.5 rounded-2xl hover:bg-lime-400 transition-all flex items-center gap-2 mx-auto text-sm">
+                <span>SHOW ALL BOUGHT CARS (7 MORE)</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <!-- TAB 2: SOLD CARS -->
+        <div id="sold-section" class="hidden space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Sold 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: FEB 10, 2026</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Porsche 911 GT2 RS</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $480,000</p>
+                        <p><strong>Sold To:</strong> Apex Motors HK</p>
+                        <p><strong>Contact:</strong> buyer@apex-hk.com</p>
+                        <p><strong>Profit/Loss:</strong> +$65,000</p>
+                    </div>
+                </div>
+                <!-- Sold 2 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: OCT 12, 2025</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Lamborghini Aventador SVJ</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $620,000</p>
+                        <p><strong>Sold To:</strong> Collector (Tariq A., Qatar)</p>
+                        <p><strong>Contact:</strong> tariq.collection@qatar.qa</p>
+                        <p><strong>Profit/Loss:</strong> +$90,000</p>
+                    </div>
+                </div>
+                <!-- Sold 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 hover:border-brand/50 transition-all">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: MAY 04, 2025</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Ferrari F8 Tributo</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $340,000</p>
+                        <p><strong>Sold To:</strong> VELOCE Concierge Service</p>
+                        <p><strong>Contact:</strong> concierge@veloce.com</p>
+                        <p><strong>Profit/Loss:</strong> +$15,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REST SOLD CARS (HIDDEN INITIALLY) -->
+            <div id="extra-sold" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                <!-- Sold 4 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: DEC 2024</span>
+                    <h3 class="font-bold text-lg text-white mt-1">McLaren 720S Coupe</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $265,000 | <strong>To:</strong> UK Buyer</p>
+                    </div>
+                </div>
+                <!-- Sold 5 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: SEP 2024</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Lamborghini Urus Performante</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $290,000 | <strong>To:</strong> US Client</p>
+                    </div>
+                </div>
+                <!-- Sold 6 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: JAN 2024</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Porsche 911 Turbo S (992)</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $245,000 | <strong>To:</strong> German Dealer</p>
+                    </div>
+                </div>
+                <!-- Sold 7 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: JUN 2023</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Bentley Continental GT V8</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $195,000 | <strong>To:</strong> Swiss Private</p>
+                    </div>
+                </div>
+                <!-- Sold 8 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: NOV 2022</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Mercedes-AMG G63 Black</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $230,000 | <strong>To:</strong> UAE VIP</p>
+                    </div>
+                </div>
+                <!-- Sold 9 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: MAR 2021</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Ferrari 458 Italia</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $215,000 | <strong>To:</strong> Italian Museum</p>
+                    </div>
+                </div>
+                <!-- Sold 10 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" class="w-full h-44 object-cover rounded-xl mb-4">
+                    <span class="text-xs text-gray-400 font-bold">SOLD: AUG 2020</span>
+                    <h3 class="font-bold text-lg text-white mt-1">Nissan GT-R Nismo</h3>
+                    <div class="mt-3 space-y-1 text-xs text-gray-300 border-t border-brand-border pt-3">
+                        <p><strong>Sale Price:</strong> $165,000 | <strong>To:</strong> JDM Collector</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-more-sold" onclick="toggleMore('sold')" class="mt-6 bg-brand text-black font-extrabold px-8 py-3.5 rounded-2xl hover:bg-lime-400 transition-all flex items-center gap-2 mx-auto text-sm">
+                <span>SHOW ALL SOLD CARS (7 MORE)</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="bg-brand-card border-t border-brand-border pt-10 pb-8 mt-16 text-xs text-gray-500 text-center">
+        <p>&copy; 2026 VELOCE Automotive Journal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchTab(type) {
+            const boughtSec = document.getElementById('bought-section');
+            const soldSec = document.getElementById('sold-section');
+            const boughtBtn = document.getElementById('tab-bought-btn');
+            const soldBtn = document.getElementById('tab-sold-btn');
+
+            if(type === 'bought') {
+                boughtSec.classList.remove('hidden');
+                soldSec.classList.add('hidden');
+                boughtBtn.className = "px-8 py-4 text-base font-bold border-b-2 border-brand text-brand flex items-center gap-2";
+                soldBtn.className = "px-8 py-4 text-base font-bold border-b-2 border-transparent text-gray-400 hover:text-white flex items-center gap-2";
+            } else {
+                soldSec.classList.remove('hidden');
+                boughtSec.classList.add('hidden');
+                soldBtn.className = "px-8 py-4 text-base font-bold border-b-2 border-brand text-brand flex items-center gap-2";
+                boughtBtn.className = "px-8 py-4 text-base font-bold border-b-2 border-transparent text-gray-400 hover:text-white flex items-center gap-2";
+            }
+        }
+
+        function toggleMore(type) {
+            const extra = document.getElementById(type === 'bought' ? 'extra-bought' : 'extra-sold');
+            const btn = document.getElementById(type === 'bought' ? 'btn-more-bought' : 'btn-more-sold');
+            
+            if(extra.classList.contains('hidden')) {
+                extra.classList.remove('hidden');
+                btn.innerHTML = `<span>SHOW LESS</span><i class="fa-solid fa-chevron-up"></i>`;
+            } else {
+                extra.classList.add('hidden');
+                btn.innerHTML = `<span>SHOW ALL ${type.toUpperCase()} CARS (7 MORE)</span><i class="fa-solid fa-chevron-down"></i>`;
+            }
+        }
+    </script>
+</body>
+</html>

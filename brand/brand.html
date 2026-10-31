@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCE - Top Brands & Legendary Models (2010-2026)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#CCFF00',
+                            lime: '#CCFF00',
+                            dark: '#0B0B0B',
+                            card: '#141414',
+                            border: '#262626'
+                        }
+                    },
+                    screens: {
+                        'nav-m': '650px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brand-dark text-white antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
+                    VELOCE<span class="text-brand">.</span>
+                </a>
+
+                <nav class="hidden nav-m:flex items-center gap-8 text-sm font-medium">
+                    <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Rent</a>
+                    <a href="../buy/buy.css" class="text-gray-400 hover:text-white transition-colors">Buy</a>
+                    <a href="../sell/sell.html" class="text-gray-400 hover:text-white transition-colors">Sell</a>
+                    <a href="./brand.html" class="text-brand font-bold border-b-2 border-brand pb-1">Brands</a>
+                    <a href="../journals/journal.html" class="text-gray-400 hover:text-white transition-colors">Journal</a>
+                </nav>
+
+                <div class="hidden nav-m:flex items-center gap-4">
+                    <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="bg-brand text-black font-bold px-5 py-2.5 rounded-full text-sm hover:bg-lime-400 transition-all transform hover:scale-105">
+                        Register
+                    </button>
+                    <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="border border-brand-border hover:border-white px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                        List your car
+                    </button>
+                </div>
+
+                <button data-collapse-toggle="mobile-menu" type="button" class="nav-m:hidden text-gray-400 hover:text-white p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="hidden nav-m:hidden border-b border-brand-border bg-brand-card px-4 pt-2 pb-6 space-y-3" id="mobile-menu">
+            <a href="#" class="block px-3 py-2 text-gray-400 hover:text-white">Buy</a>
+            <a href="#" class="block px-3 py-2 text-gray-400 hover:text-white">Rent</a>
+            <a href="#" class="block px-3 py-2 text-gray-400 hover:text-white">Sell</a>
+            <a href="#" class="block px-3 py-2 text-white font-semibold rounded-md bg-brand-dark">Brands</a>
+            <a href="#" class="block px-3 py-2 text-gray-400 hover:text-white">Journal</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow py-12">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand text-xs font-bold tracking-widest uppercase">TOP BRANDS & MODELS</span>
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-2">LEGENDARY CARS (2010 – 2026)</h1>
+            <p class="text-gray-400 text-sm sm:text-base mt-4">Discover the most influential hypercars, supercars, and luxury vehicles created by top 13 automotive giants over the last decade.</p>
+        </div>
+
+        <div class="space-y-12">
+
+            <!-- 1. PORSCHE -->
+            <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-brand-border pb-6">
+                    <div>
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #1</span>
+                        <h2 class="text-3xl font-black text-white">PORSCHE</h2>
+                        <p class="text-xs text-gray-400 mt-1">Stuttgart, Germany • Precision Engineering & Track Dominance</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Porsche 911 GT3 RS (2024)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">4.0L Flat-6 • 518 HP • 0-100 km/h: 3.2s</p>
+                        <p class="text-xs text-gray-300">Pinnacle of modern aerodynamic engineering with active DRS wing.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Porsche 918 Spyder (2015)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">4.6L V8 Hybrid • 887 HP • Top Speed: 345 km/h</p>
+                        <p class="text-xs text-gray-300">Part of the legendary "Holy Trinity" hypercars that pioneered hybrid speed.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1611821064430-0d410f9d2201?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Taycan Turbo GT (2026)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">Dual Electric • 1,092 HP • 0-100 km/h: 2.2s</p>
+                        <p class="text-xs text-gray-300">The ultimate electric track weapon holding world lap records.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. FERRARI -->
+            <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-brand-border pb-6">
+                    <div>
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #2</span>
+                        <h2 class="text-3xl font-black text-white">FERRARI</h2>
+                        <p class="text-xs text-gray-400 mt-1">Maranello, Italy • Racing Heritage & V12 Legacy</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">LaFerrari (2013)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">6.3L V12 + KERS • 950 HP • Top Speed: 350+ km/h</p>
+                        <p class="text-xs text-gray-300">Ferrari's definitive flagship hypercar combining V12 with F1 technology.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">812 Competizione (2022)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">6.5L V12 • 819 HP • 9,500 RPM Redline</p>
+                        <p class="text-xs text-gray-300">Naturally aspirated front-mid V12 masterpiece with 4-wheel steering.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">SF90 XX Stradale (2025)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">4.0L V8 Turbo + 3 Motors • 1,016 HP</p>
+                        <p class="text-xs text-gray-300">First road-legal XX-program hypercar with aggressive aerodynamic downforce.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. LAMBORGHINI -->
+            <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-brand-border pb-6">
+                    <div>
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #3</span>
+                        <h2 class="text-3xl font-black text-white">LAMBORGHINI</h2>
+                        <p class="text-xs text-gray-400 mt-1">Sant'Agata Bolognese, Italy • Uncompromising Extreme Supercars</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Aventador SVJ (2018)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">6.5L V12 • 770 HP • ALA Active Aero</p>
+                        <p class="text-xs text-gray-300">Nürburgring king featuring active aero vectoring and aggressive V12 power.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Urus Performante (2023)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">4.0L V8 Turbo • 666 HP • Carbon Bodywork</p>
+                        <p class="text-xs text-gray-300">The world's premier Super SUV with track-ready agility.</p>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                        <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Revuelto HPEV (2026)</h3>
+                        <p class="text-xs text-gray-400 mt-1 mb-2">6.5L V12 Hybrid • 1,001 HP • AWD</p>
+                        <p class="text-xs text-gray-300">Next-gen electrified V12 hypercar leading Lamborghini into a new era.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YASHIRILGAN 10 TA QO'SHIMCHA BRENDLAR (RASMLARI BILAN) -->
+            <div id="extra-brands" class="hidden space-y-12">
+
+                <!-- 4. MCLAREN -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #4</span>
+                        <h2 class="text-3xl font-black text-white">MCLAREN</h2>
+                        <p class="text-xs text-gray-400 mt-1">Woking, UK • Lightweight Carbon Fiber & F1 Tech</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">McLaren P1 (2013)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">3.8L V8 Hybrid • 903 HP</p>
+                            <p class="text-xs text-gray-300">Revolutionary aerodynamic hybrid hypercar legend.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">McLaren 720S (2017)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">4.0L V8 Turbo • 710 HP</p>
+                            <p class="text-xs text-gray-300">Benchmarked all modern supercars in acceleration.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">McLaren 750S (2025)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">4.0L V8 Turbo • 740 HP</p>
+                            <p class="text-xs text-gray-300">Ultra-lightweight evolution built for pure engagement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. BUGATTI -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #5</span>
+                        <h2 class="text-3xl font-black text-white">BUGATTI</h2>
+                        <p class="text-xs text-gray-400 mt-1">Molsheim, France • Unrivaled W16 Luxury & Speed</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1600793575654-910699b5e4d4?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Bugatti Veyron SS (2010)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">8.0L W16 • 1,200 HP • 431 km/h</p>
+                            <p class="text-xs text-gray-300">Former world record holder and engineering marvel.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Chiron Super Sport (2021)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">8.0L W16 • 1,578 HP • 490+ km/h</p>
+                            <p class="text-xs text-gray-300">Broke the 300 mph barrier with custom longtail aero.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Bugatti Tourbillon (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">8.3L V16 Hybrid • 1,800 HP</p>
+                            <p class="text-xs text-gray-300">All-new analog masterpiece with mechanical gauge dash.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. ASTON MARTIN -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #6</span>
+                        <h2 class="text-3xl font-black text-white">ASTON MARTIN</h2>
+                        <p class="text-xs text-gray-400 mt-1">Gaydon, UK • Timeless British Elegance & F1 Performance</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">One-77 (2011)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">7.3L V12 • 750 HP</p>
+                            <p class="text-xs text-gray-300">Handcrafted aluminum body artwork and limited flagship.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Valkyrie (2023)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.5L Cosworth V12 • 1,160 HP</p>
+                            <p class="text-xs text-gray-300">Formula 1 car designed for public roads.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Vanquish (2025)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">5.2L Twin-Turbo V12 • 835 HP</p>
+                            <p class="text-xs text-gray-300">The ultimate front-engine luxury grand tourer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. ROLLS-ROYCE -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #7</span>
+                        <h2 class="text-3xl font-black text-white">ROLLS-ROYCE</h2>
+                        <p class="text-xs text-gray-400 mt-1">Goodwood, UK • Unrivaled Ultra-Luxury Craftsmanship</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Phantom VIII (2018)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.75L V12 • Silent Suite</p>
+                            <p class="text-xs text-gray-300">The ultimate flagship pinnacle of automotive luxury.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Cullinan Black Badge (2022)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.75L V12 • 592 HP</p>
+                            <p class="text-xs text-gray-300">The most ultra-luxury focused SUV in existence.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Spectre EV (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">Dual EV Motors • 577 HP</p>
+                            <p class="text-xs text-gray-300">First fully electric Rolls-Royce ultra-coupe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. BENTLEY -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #8</span>
+                        <h2 class="text-3xl font-black text-white">BENTLEY</h2>
+                        <p class="text-xs text-gray-400 mt-1">Crewe, UK • Grand Touring Excellence & Power</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Continental GT Speed (2021)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.0L W12 • 650 HP</p>
+                            <p class="text-xs text-gray-300">Definition of high-speed luxury grand touring.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Mulsanne Speed (2015)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.75L V8 • 811 lb-ft Torque</p>
+                            <p class="text-xs text-gray-300">Historic twin-turbo V8 flagship luxury saloon.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Continental GT Hybrid (2025)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">V8 Plug-in Hybrid • 771 HP</p>
+                            <p class="text-xs text-gray-300">Most powerful Bentley road car ever engineered.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. MERCEDES-AMG -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #9</span>
+                        <h2 class="text-3xl font-black text-white">MERCEDES-AMG</h2>
+                        <p class="text-xs text-gray-400 mt-1">Affalterbach, Germany • Handbuilt V8 Muscle & F1 Hybrid Power</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">SLS Black Series (2014)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.2L V8 NA • 622 HP</p>
+                            <p class="text-xs text-gray-300">Naturally aspirated Gullwing track special legend.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">AMG GT Black Series (2021)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">4.0L Flat-Plane V8 • 720 HP</p>
+                            <p class="text-xs text-gray-300">Nürburgring record-setting active aero weapon.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">AMG ONE (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">1.6L F1 V6 Hybrid • 1,049 HP</p>
+                            <p class="text-xs text-gray-300">Actual Formula 1 engine fitted in a street car.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. BMW M -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #10</span>
+                        <h2 class="text-3xl font-black text-white">BMW M</h2>
+                        <p class="text-xs text-gray-400 mt-1">Munich, Germany • The Ultimate Driving Machines</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">M4 CSL (2023)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">3.0L Inline-6 Turbo • 543 HP</p>
+                            <p class="text-xs text-gray-300">Stripped-out lightweight coupe built for track days.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">M5 CS (2022)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">4.4L V8 Turbo • 627 HP</p>
+                            <p class="text-xs text-gray-300">Widely regarded as the greatest M sedan ever crafted.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">M5 Hybrid (2025)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">V8 Plug-in Hybrid • 718 HP</p>
+                            <p class="text-xs text-gray-300">High performance electrification technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. AUDI SPORT -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #11</span>
+                        <h2 class="text-3xl font-black text-white">AUDI SPORT</h2>
+                        <p class="text-xs text-gray-400 mt-1">Ingolstadt, Germany • Quattro AWD & High-Rev V10 Technology</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Audi R8 V10 (2020)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">5.2L V10 NA • 612 HP</p>
+                            <p class="text-xs text-gray-300">Everyday supercar featuring naturally aspirated V10 power.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1600793575654-910699b5e4d4?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">RS6 Avant GT (2024)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">4.0L V8 Turbo • 621 HP</p>
+                            <p class="text-xs text-gray-300">Limited-run ultimate high-performance wagon.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1611821064430-0d410f9d2201?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">RS e-tron GT (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">Dual EV Motors • 912 HP</p>
+                            <p class="text-xs text-gray-300">Most powerful production Audi car in history.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. KOENIGSEGG -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #12</span>
+                        <h2 class="text-3xl font-black text-white">KOENIGSEGG</h2>
+                        <p class="text-xs text-gray-400 mt-1">Ängelholm, Sweden • Extreme Megacar Innovations</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Agera RS (2017)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">5.0L V8 Turbo • 1,360 HP • 447 km/h</p>
+                            <p class="text-xs text-gray-300">Proven world speed record holder on public roads.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Jesko Absolut (2023)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">5.0L V8 Turbo • 1,600 HP</p>
+                            <p class="text-xs text-gray-300">Fastest Koenigsegg car that will ever be engineered.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Gemera (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">V8 Hybrid • 2,300 HP • 4 Seater</p>
+                            <p class="text-xs text-gray-300">World’s first 4-seat megacar with unbelievable power.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. PAGANI -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-brand-border pb-6">
+                        <span class="text-brand text-xs font-bold uppercase tracking-widest">TOP BRAND #13</span>
+                        <h2 class="text-3xl font-black text-white">PAGANI</h2>
+                        <p class="text-xs text-gray-400 mt-1">San Cesario sul Panaro, Italy • Fine Automotive Artistry</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Huayra BC (2016)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.0L AMG V12 Turbo • 745 HP</p>
+                            <p class="text-xs text-gray-300">Extreme lightweight hypercar with titanium aero system.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Huayra R (2021)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.0L V12 NA • 850 HP • 9,000 RPM</p>
+                            <p class="text-xs text-gray-300">Pure track-only screaming naturally aspirated V12 art.</p>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-border rounded-2xl overflow-hidden group hover:border-brand transition-all p-5">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800" class="w-full h-44 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brand transition-colors">Utopia (2026)</h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-2">6.0L Twin-Turbo V12 • 864 HP • Manual</p>
+                            <p class="text-xs text-gray-300">Timeless analog supercar with exposed gated manual shifter.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SHOW ALL / SHOW LESS TUGMASI -->
+            <div class="text-center pt-6">
+                <button id="toggle-btn" onclick="toggleBrands()" class="bg-brand text-black font-extrabold px-8 py-4 rounded-2xl hover:bg-lime-400 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto text-sm sm:text-base">
+                    <span id="btn-text">SHOW ALL BRANDS (10 MORE)</span>
+                    <i id="btn-icon" class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+   <footer class="bg-[#0D0D0D] border-t border-[#262626] pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <span class="text-2xl font-black tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Redefining luxury automotive experiences through premium rentals and direct purchases worldwide.</p>
+                    <div class="flex gap-4 mt-6 text-gray-400 text-lg">
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Fleet</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand">Luxury Sedans</a></li>
+                        <li><a href="#" class="hover:text-brand">Supercars</a></li>
+                        <li><a href="#" class="hover:text-brand">Performance SUVs</a></li>
+                        <li><a href="#" class="hover:text-brand">Hypercars</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand">Journal</a></li>
+                        <li><a href="#" class="hover:text-brand">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-4">Subscribe for exclusive private fleet releases.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email address" class="bg-[#161616] border border-[#262626] rounded-l-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand w-full">
+                        <button class="bg-brand text-black font-bold px-4 rounded-r-xl hover:bg-brand-hover">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-[#262626] pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>© 2026 VELOCE Luxury Automotive Group. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    <div id="register-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-brand-card border border-brand-border rounded-2xl shadow-2xl p-6">
+                <div class="flex items-center justify-between pb-4 border-b border-brand-border">
+                    <h3 class="text-xl font-bold">Create Account</h3>
+                    <button type="button" class="text-gray-400 hover:text-white" data-modal-hide="register-modal">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <form class="space-y-4 pt-4">
+                    <div>
+                        <label class="block mb-2 text-xs font-medium text-gray-300">Email Address</label>
+                        <input type="email" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm focus:border-brand focus:outline-none" placeholder="name@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-xs font-medium text-gray-300">Password</label>
+                        <input type="password" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm focus:border-brand focus:outline-none" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-lime-400 transition-colors">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleBrands() {
+            const extraBrands = document.getElementById('extra-brands');
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+
+            if (extraBrands.classList.contains('hidden')) {
+                extraBrands.classList.remove('hidden');
+                btnText.textContent = 'SHOW LESS';
+                btnIcon.className = 'fa-solid fa-chevron-up';
+            } else {
+                extraBrands.classList.add('hidden');
+                btnText.textContent = 'SHOW ALL BRANDS (10 MORE)';
+                btnIcon.className = 'fa-solid fa-chevron-down';
+                window.scrollTo({ top: document.querySelector('main').offsetTop - 50, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
