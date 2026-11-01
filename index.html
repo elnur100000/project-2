@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,20 +34,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0D0D0D; color: #FFFFFF; }
-        .glow-effect { box-shadow: 0 0 25px rgba(204, 255, 0, 0.15); }
-        .glow-effect-hover:hover { box-shadow: 0 0 30px rgba(204, 255, 0, 0.3); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #0D0D0D; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #CCFF00; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0D;
+            color: #FFFFFF;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
+        }
+
+        .glow-effect-hover:hover {
+            box-shadow: 0 0 30px rgba(204, 255, 0, 0.3);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 3px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #CCFF00;
+        }
 
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
-            -ms-overflow-style: none; 
-            scrollbar-width: none;  
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
     <script>
@@ -62,92 +88,135 @@
         }
     </script>
 </head>
+
 <body class="bg-[#0D0D0D] text-white antialiased custom-scrollbar">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#262626]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-8">
-                    <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
-                        <span class="text-brand">VELOCE</span>
-                    </a>
-                    <nav class="flex nav-m:hidden space-x-6 text-sm font-medium text-gray-300">
-                        <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
-                        <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
-                        <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
-                        <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
-                        <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
-                    </nav>
-                </div>
-
-                <div class="hidden nav-m:flex items-center space-x-5">
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-globe text-lg"></i>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
-                        <i class="fa-regular fa-heart text-lg"></i>
-                        <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-bag-shopping text-lg"></i>
-                    </button>
-                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
-                        Account Access
-                    </button>
-                </div>
-
-                <div class="flex nav-m:hidden items-center gap-3">
-                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
-                        Sign In
-                    </button>
-                    <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
-                    </button>
-                </div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#262626]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Logo va Desktop Navigatsiya -->
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
+                    <span class="text-brand">VELOCE</span>
+                </a>
+                
+                <!-- Desktop Navigation Menu (md va undan katta ekranlarda ko'rinadi) -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
+                    <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
+                    <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
+                    <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
+                    <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
+                    <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
+                </nav>
             </div>
-        </div>
-    </header>
 
-    <div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#161616] w-80 border-r border-[#262626]" tabindex="-1">
-        <div class="flex justify-between items-center mb-8">
-            <span class="text-xl font-bold tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
-            <button type="button" data-drawer-hide="drawer-navigation" class="text-gray-400 hover:text-white text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <div class="py-4 overflow-y-auto">
-            <ul class="space-y-4 font-medium text-base">
-                <li><a href="#hero" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Rent</a></li>
-                <li><a href="#categories" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Buy</a></li>
-                <li><a href="#sell" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Sell Your Car</a></li>
-                <li><a href="#faq" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Top Brands</a></li>
-                <li><a href="#journal" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">The Journal</a></li>
-            </ul>
-            <div class="pt-8 border-t border-[#262626] mt-8">
-                <div class="grid grid-cols-4 gap-4 text-center text-lg text-gray-300 mb-6">
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-globe"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-regular fa-heart"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-bag-shopping"></i></a>
-                </div>
-                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" data-drawer-hide="drawer-navigation" class="w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors">
-                    Sign In / Register
+            <!-- Desktop Action Buttons (md va undan katta ekranlarda ko'rinadi) -->
+            <div class="hidden md:flex items-center space-x-5">
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-globe text-lg"></i>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                </button>
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal"
+                    class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
+                    Account Access
                 </button>
             </div>
+
+            <!-- Mobile Controls (Mobil ekranlarda ko'rinadi) -->
+            <div class="flex md:hidden items-center gap-3">
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal"
+                    class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
+                    Sign In
+                </button>
+
+                <!-- Flowbite Drawer Trigger -->
+                <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                    aria-controls="drawer-navigation" type="button"
+                    class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                </button>
+            </div>
+
         </div>
     </div>
+</header>
 
- <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+<!-- Flowbite Drawer Navigation (Mobil uchun Ochiluvchi Yon Menyu) -->
+<div id="drawer-navigation"
+    class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#161616] w-80 border-r border-[#262626]"
+    tabindex="-1">
+    
+    <!-- Drawer Header -->
+    <div class="flex justify-between items-center mb-8">
+        <span class="text-xl font-bold tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
+        <button type="button" data-drawer-hide="drawer-navigation" class="text-gray-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- Drawer Content -->
+    <div class="py-4 overflow-y-auto">
+        <ul class="space-y-4 font-medium text-base">
+            <li>
+                <a href="#hero" data-drawer-hide="drawer-navigation"
+                    class="block text-gray-300 hover:text-brand py-2">Rent</a>
+            </li>
+            <li>
+                <a href="./buy/buy.html" data-drawer-hide="drawer-navigation"
+                    class="block text-gray-300 hover:text-brand py-2">Buy</a>
+            </li>
+            <li>
+                <a href="./sell/sell.html" data-drawer-hide="drawer-navigation"
+                    class="block text-gray-300 hover:text-brand py-2">Sell Your Car</a>
+            </li>
+            <li>
+                <a href="./brand/brand.html" data-drawer-hide="drawer-navigation"
+                    class="block text-gray-300 hover:text-brand py-2">Top Brands</a>
+            </li>
+            <li>
+                <a href="./journals/journal.html" data-drawer-hide="drawer-navigation"
+                    class="block text-gray-300 hover:text-brand py-2">The Journal</a>
+            </li>
+        </ul>
+
+        <!-- Quick Action Icons & Button -->
+        <div class="pt-8 border-t border-[#262626] mt-8">
+            <div class="grid grid-cols-4 gap-4 text-center text-lg text-gray-300 mb-6">
+                <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-globe"></i></a>
+                <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-regular fa-heart"></i></a>
+                <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+            
+            <button data-modal-target="auth-modal" data-modal-toggle="auth-modal"
+                data-drawer-hide="drawer-navigation"
+                class="w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors">
+                Sign In / Register
+            </button>
+        </div>
+    </div>
+</div>
+
+    <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <!-- Orqa fon nurlanishi -->
-        <div class="absolute inset-0 bg-gradient-to-b from-brand/5 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand/5 via-transparent to-transparent pointer-events-none">
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            
+
             <!-- Statistik ko'rsatkichlar -->
-            <div class="flex justify-center items-center gap-4 sm:gap-8 mb-6 text-xs sm:text-sm text-gray-400 uppercase tracking-widest font-semibold">
+            <div
+                class="flex justify-center items-center gap-4 sm:gap-8 mb-6 text-xs sm:text-sm text-gray-400 uppercase tracking-widest font-semibold">
                 <div><span class="text-brand font-bold">1000+</span> Fleet Size</div>
                 <div>•</div>
                 <div><span class="text-brand font-bold">150+</span> Outlets Globally</div>
@@ -158,43 +227,60 @@
             <!-- Asosiy Sarlavha -->
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-4">
                 Drive the extraordinary.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-brand">Rent it. Or own it.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-brand">Rent it.
+                    Or own it.</span>
             </h1>
 
             <!-- Flowbite Carousel (3 ta to'g'rilangan moshina rasmi) -->
             <div class="relative my-8 max-w-4xl mx-auto">
                 <div class="absolute -inset-1 bg-brand/10 rounded-3xl filter blur-2xl opacity-50"></div>
-                
-                <div id="default-carousel" class="relative w-full rounded-2xl overflow-hidden border border-[#333]" data-carousel="slide">
+
+                <div id="default-carousel" class="relative w-full rounded-2xl overflow-hidden border border-[#333]"
+                    data-carousel="slide">
                     <!-- Carousel Wrapper -->
                     <div class="relative h-64 sm:h-96 overflow-hidden rounded-2xl bg-[#161616]">
-                        
+
                         <!-- 1-Rasm (Ferrari F8 Tributo) -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Ferrari F8 Tributo">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop"
+                                class="absolute block w-full h-full object-cover object-center"
+                                alt="Ferrari F8 Tributo">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-6 text-left">
-                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Featured</span>
+                                <span
+                                    class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Featured</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Ferrari F8 Tributo</h3>
                             </div>
                         </div>
 
                         <!-- 2-Rasm (Porsche 911 GT3 RS) -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Porsche 911 GT3 RS">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop"
+                                class="absolute block w-full h-full object-cover object-center"
+                                alt="Porsche 911 GT3 RS">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-6 text-left">
-                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Supercar</span>
+                                <span
+                                    class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Supercar</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Porsche 911 GT3 RS</h3>
                             </div>
                         </div>
 
                         <!-- 3-Rasm (Lamborghini Aventador SVJ) -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Lamborghini Aventador SVJ">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop"
+                                class="absolute block w-full h-full object-cover object-center"
+                                alt="Lamborghini Aventador SVJ">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent">
+                            </div>
                             <div class="absolute bottom-4 left-6 text-left">
-                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Hypercar</span>
+                                <span
+                                    class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Hypercar</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Lamborghini Aventador SVJ</h3>
                             </div>
                         </div>
@@ -203,19 +289,28 @@
 
                     <!-- Slider Indikatorlari (Nuqtalar) -->
                     <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+                            aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+                            aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+                            aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                     </div>
 
                     <!-- Oldinga / Orqaga tugmalari -->
-                    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
+                    <button type="button"
+                        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
                             <i class="fa-solid fa-chevron-left"></i>
                         </span>
                     </button>
-                    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
+                    <button type="button"
+                        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
                             <i class="fa-solid fa-chevron-right"></i>
                         </span>
                     </button>
@@ -223,30 +318,35 @@
             </div>
 
             <!-- Qidiruv Formasi (Interaktiv Tabs bilan) -->
-            <div class="max-w-4xl mx-auto bg-[#161616]/90 backdrop-blur-xl border border-[#262626] rounded-2xl p-4 sm:p-6 shadow-2xl">
-                
+            <div
+                class="max-w-4xl mx-auto bg-[#161616]/90 backdrop-blur-xl border border-[#262626] rounded-2xl p-4 sm:p-6 shadow-2xl">
+
                 <!-- Tablar (Rent, Buy, Sell) -->
                 <div class="flex border-b border-[#262626] mb-6">
-                    <button onclick="setTab('rent')" id="btn-rent" class="px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all">
+                    <button onclick="setTab('rent')" id="btn-rent"
+                        class="px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-key"></i> Rent
                     </button>
-                    <button onclick="setTab('buy')" id="btn-buy" class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
+                    <button onclick="setTab('buy')" id="btn-buy"
+                        class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-car"></i> Buy
                     </button>
-                    <button onclick="setTab('sell')" id="btn-sell" class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
+                    <button onclick="setTab('sell')" id="btn-sell"
+                        class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-hand-holding-dollar"></i> Sell
                     </button>
                 </div>
 
                 <!-- Inputlar Qismi -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
-                    
+
                     <!-- Joylashuv -->
                     <div class="bg-[#0D0D0D] p-3.5 rounded-xl border border-[#262626]">
                         <label class="block text-xs text-gray-400 font-medium mb-1">LOCATION</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
                             <i class="fa-solid fa-location-dot text-brand"></i>
-                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
+                            <select
+                                class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
                                 <option class="bg-[#161616]">Miami Int. Airport (MIA)</option>
                                 <option class="bg-[#161616]">Los Angeles (LAX)</option>
                                 <option class="bg-[#161616]">New York (JFK)</option>
@@ -257,10 +357,12 @@
 
                     <!-- Dinamik Sana / Yil Maydoni -->
                     <div class="bg-[#0D0D0D] p-3.5 rounded-xl border border-[#262626]">
-                        <label id="dynamic-label" class="block text-xs text-gray-400 font-medium mb-1">PICKUP DATE</label>
+                        <label id="dynamic-label" class="block text-xs text-gray-400 font-medium mb-1">PICKUP
+                            DATE</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
                             <i id="dynamic-icon" class="fa-regular fa-calendar-days text-brand"></i>
-                            <input id="dynamic-input" type="date" class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer [color-scheme:dark]">
+                            <input id="dynamic-input" type="date"
+                                class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer [color-scheme:dark]">
                         </div>
                     </div>
 
@@ -269,7 +371,8 @@
                         <label class="block text-xs text-gray-400 font-medium mb-1">CAR TYPE</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
                             <i class="fa-solid fa-sliders text-brand"></i>
-                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
+                            <select
+                                class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
                                 <option class="bg-[#161616]">All Categories</option>
                                 <option class="bg-[#161616]">Supercars</option>
                                 <option class="bg-[#161616]">Luxury SUVs</option>
@@ -279,7 +382,8 @@
                     </div>
 
                     <!-- Qidirish Tugmasi -->
-                    <a href="./porshe search/porshe.html" id="search-action-btn" class="bg-brand hover:bg-brand-hover text-black font-bold h-full min-h-[50px] rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]">
+                    <a href="./porshe search/porshe.html" id="search-action-btn"
+                        class="bg-brand hover:bg-brand-hover text-black font-bold h-full min-h-[50px] rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Search Cars</span>
                     </a>
@@ -290,7 +394,7 @@
     </section>
 
     <!-- Flowbite JS CDN -->
- 
+
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -298,72 +402,101 @@
                 <h2 class="text-3xl font-extrabold text-white mt-1">Browse by Category</h2>
             </div>
             <div class="flex gap-2">
-                <button id="cat-prev" onclick="scrollCategories(-300)" class="w-10 h-10 rounded-full bg-[#161616] border border-[#262626] flex items-center justify-center text-white hover:border-brand hover:text-brand transition-colors">
+                <button id="cat-prev" onclick="scrollCategories(-300)"
+                    class="w-10 h-10 rounded-full bg-[#161616] border border-[#262626] flex items-center justify-center text-white hover:border-brand hover:text-brand transition-colors">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button id="cat-next" onclick="scrollCategories(300)" class="w-10 h-10 rounded-full bg-[#161616] border border-[#262626] flex items-center justify-center text-white hover:border-brand hover:text-brand transition-colors">
+                <button id="cat-next" onclick="scrollCategories(300)"
+                    class="w-10 h-10 rounded-full bg-[#161616] border border-[#262626] flex items-center justify-center text-white hover:border-brand hover:text-brand transition-colors">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
         </div>
 
         <div id="category-container" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar py-2">
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" alt="Supercars" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
+                        alt="Supercars"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
                     <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Hypercars</h3>
                     <p class="text-sm text-gray-400 mt-1">12 Vehicles</p>
                 </div>
             </div>
 
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop" alt="SUVs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop"
+                        alt="SUVs"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
                     <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Luxury SUVs</h3>
                     <p class="text-sm text-gray-400 mt-1">18 Vehicles</p>
                 </div>
             </div>
 
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" alt="Sedans" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop"
+                        alt="Sedans"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Sedans & Saloons</h3>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Sedans & Saloons
+                    </h3>
                     <p class="text-sm text-gray-400 mt-1">14 Vehicles</p>
                 </div>
             </div>
 
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" alt="Electric" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop"
+                        alt="Electric"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Electric Performance</h3>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Electric
+                        Performance</h3>
                     <p class="text-sm text-gray-400 mt-1">10 Vehicles</p>
                 </div>
             </div>
 
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" alt="Convertibles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop"
+                        alt="Convertibles"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
                     <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Convertibles</h3>
                     <p class="text-sm text-gray-400 mt-1">9 Vehicles</p>
                 </div>
             </div>
 
-            <div class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
+            <div
+                class="min-w-[260px] sm:min-w-[280px] group relative rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] cursor-pointer hover:border-brand transition-all duration-300 shrink-0">
                 <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" alt="Track Special" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop"
+                        alt="Track Special"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
-                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Track Specials</h3>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand transition-colors">Track Specials
+                    </h3>
                     <p class="text-sm text-gray-400 mt-1">7 Vehicles</p>
                 </div>
             </div>
@@ -374,33 +507,54 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
                 <span class="text-brand text-xs font-bold tracking-widest uppercase">EXQUISITE SELECTION</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Explore Our Complete Fleet (20+ Cars)</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Explore Our Complete Fleet (20+ Cars)
+                </h2>
             </div>
 
             <div class="flex flex-wrap gap-2 bg-[#161616] p-1.5 rounded-xl border border-[#262626]">
-                <button class="filter-btn active px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-brand text-black" data-filter="all">All Fleet</button>
-                <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all" data-filter="hypercar">Hypercars</button>
-                <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all" data-filter="sedan">Luxury Sedans</button>
-                <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all" data-filter="suv">SUVs</button>
-                <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all" data-filter="electric">Electric</button>
-                <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all" data-filter="track">Track & Sport</button>
+                <button
+                    class="filter-btn active px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-brand text-black"
+                    data-filter="all">All Fleet</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                    data-filter="hypercar">Hypercars</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                    data-filter="sedan">Luxury Sedans</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                    data-filter="suv">SUVs</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                    data-filter="electric">Electric</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                    data-filter="track">Track & Sport</button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="car-grid">
-            
-            <div class="car-card track hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+
+            <div
+                class="car-card track hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-brand text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Best Seller</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-brand text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Best
+                            Seller</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop" alt="Porsche 911 GT3 RS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop"
+                            alt="Porsche 911 GT3 RS"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Porsche 911 GT3 RS</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Porsche 911
+                            GT3 RS</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.0s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 518 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 296 km/h</div>
@@ -410,25 +564,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$950<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$950<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Porsche 911 GT3 RS" data-price="$950" data-img="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Porsche 911 GT3 RS"
+                        data-price="$950"
+                        data-img="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" alt="Ferrari SF90 Stradale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop"
+                            alt="Ferrari SF90 Stradale"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Ferrari SF90 Stradale</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Ferrari SF90
+                            Stradale</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.5s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 986 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 340 km/h</div>
@@ -438,26 +602,37 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,450<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,450<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Ferrari SF90 Stradale" data-price="$1,450" data-img="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Ferrari SF90 Stradale"
+                        data-price="$1,450"
+                        data-img="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Popular</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Popular</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" alt="Lamborghini Huracán EVO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop"
+                            alt="Lamborghini Huracán EVO"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lamborghini Huracán EVO</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lamborghini
+                            Huracán EVO</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.9s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 631 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 325 km/h</div>
@@ -467,25 +642,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,200<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,200<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Lamborghini Huracán EVO" data-price="$1,200" data-img="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal"
+                        data-car="Lamborghini Huracán EVO" data-price="$1,200"
+                        data-img="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" alt="McLaren 720S Spider" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop"
+                            alt="McLaren 720S Spider"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">McLaren 720S Spider</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">McLaren 720S
+                            Spider</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.8s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 710 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 341 km/h</div>
@@ -495,26 +680,37 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,350<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,350<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="McLaren 720S Spider" data-price="$1,350" data-img="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="McLaren 720S Spider"
+                        data-price="$1,350"
+                        data-img="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card electric hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card electric hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" alt="Porsche Taycan Turbo S" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop"
+                            alt="Porsche Taycan Turbo S"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Porsche Taycan Turbo S</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Porsche Taycan
+                            Turbo S</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.6s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 750 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 260 km/h</div>
@@ -524,25 +720,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$850<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$850<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Porsche Taycan Turbo S" data-price="$850" data-img="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal"
+                        data-car="Porsche Taycan Turbo S" data-price="$850"
+                        data-img="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop" alt="Lamborghini Urus Performante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop"
+                            alt="Lamborghini Urus Performante"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lamborghini Urus Performante</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lamborghini
+                            Urus Performante</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.3s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 657 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 306 km/h</div>
@@ -552,25 +758,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,150<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,150<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Lamborghini Urus Performante" data-price="$1,150" data-img="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal"
+                        data-car="Lamborghini Urus Performante" data-price="$1,150"
+                        data-img="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" alt="Rolls-Royce Ghost" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop"
+                            alt="Rolls-Royce Ghost"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Rolls-Royce Ghost</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Rolls-Royce
+                            Ghost</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 4.6s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 563 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 250 km/h</div>
@@ -580,25 +796,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,600<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,600<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Rolls-Royce Ghost" data-price="$1,600" data-img="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Rolls-Royce Ghost"
+                        data-price="$1,600"
+                        data-img="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card sedan track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card sedan track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" alt="BMW M8 Gran Coupe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop"
+                            alt="BMW M8 Gran Coupe"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">BMW M8 Gran Coupe</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">BMW M8 Gran
+                            Coupe</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.0s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 617 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 305 km/h</div>
@@ -608,26 +834,37 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$750<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$750<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="BMW M8 Gran Coupe" data-price="$750" data-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="BMW M8 Gran Coupe"
+                        data-price="$750"
+                        data-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card electric sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card electric sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop" alt="Tesla Model S Plaid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop"
+                            alt="Tesla Model S Plaid"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Tesla Model S Plaid</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Tesla Model S
+                            Plaid</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 1.99s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 1020 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 322 km/h</div>
@@ -637,25 +874,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$650<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$650<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Tesla Model S Plaid" data-price="$650" data-img="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Tesla Model S Plaid"
+                        data-price="$650"
+                        data-img="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=600&auto=format&fit=crop" alt="Mercedes-AMG G 63" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=600&auto=format&fit=crop"
+                            alt="Mercedes-AMG G 63"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Mercedes-AMG G 63</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Mercedes-AMG G
+                            63</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 4.5s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 577 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 240 km/h</div>
@@ -665,25 +912,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$900<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$900<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Mercedes-AMG G 63" data-price="$900" data-img="https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Mercedes-AMG G 63"
+                        data-price="$900"
+                        data-img="https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop" alt="Aston Martin DBS Superleggera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
+                            alt="Aston Martin DBS Superleggera"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Aston Martin DBS</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Aston Martin
+                            DBS</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.4s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 715 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 340 km/h</div>
@@ -693,25 +950,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,100<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,100<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Aston Martin DBS" data-price="$1,100" data-img="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Aston Martin DBS"
+                        data-price="$1,100"
+                        data-img="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=600&auto=format&fit=crop" alt="Audi RS7 Sportback" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=600&auto=format&fit=crop"
+                            alt="Audi RS7 Sportback"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Audi RS7 Sportback</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Audi RS7
+                            Sportback</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.5s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 591 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 305 km/h</div>
@@ -721,26 +988,38 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$680<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$680<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Audi RS7 Sportback" data-price="$680" data-img="https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Audi RS7 Sportback"
+                        data-price="$680"
+                        data-img="https://images.unsplash.com/photo-1541348263662-e082662d82da?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card electric suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card electric suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric SUV</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric
+                            SUV</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" alt="Lotus Eletre R" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop"
+                            alt="Lotus Eletre R"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lotus Eletre R</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Lotus Eletre R
+                        </h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.95s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 905 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 265 km/h</div>
@@ -750,25 +1029,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$880<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$880<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Lotus Eletre R" data-price="$880" data-img="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Lotus Eletre R"
+                        data-price="$880"
+                        data-img="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600&auto=format&fit=crop" alt="Bentley Continental GT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600&auto=format&fit=crop"
+                            alt="Bentley Continental GT"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Bentley Continental GT</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Bentley
+                            Continental GT</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.6s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 650 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 335 km/h</div>
@@ -778,25 +1067,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,250<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,250<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Bentley Continental GT" data-price="$1,250" data-img="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal"
+                        data-car="Bentley Continental GT" data-price="$1,250"
+                        data-img="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop" alt="Range Rover SV Autograph" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop"
+                            alt="Range Rover SV Autograph"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Range Rover SV</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Range Rover SV
+                        </h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 4.4s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 606 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 261 km/h</div>
@@ -806,25 +1105,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$950<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$950<span class="text-xs text-gray-400 font-normal">
+                                / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Range Rover SV" data-price="$950" data-img="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Range Rover SV"
+                        data-price="$950"
+                        data-img="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card track hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card track hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" alt="Mercedes-AMG GT Black Series" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop"
+                            alt="Mercedes-AMG GT Black Series"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">AMG GT Black Series</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">AMG GT Black
+                            Series</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.1s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 720 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 325 km/h</div>
@@ -834,25 +1143,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,300<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,300<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="AMG GT Black Series" data-price="$1,300" data-img="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="AMG GT Black Series"
+                        data-price="$1,300"
+                        data-img="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card suv bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" alt="Aston Martin DBX707" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
+                            alt="Aston Martin DBX707"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Aston Martin DBX707</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Aston Martin
+                            DBX707</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 3.1s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 697 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 310 km/h</div>
@@ -862,26 +1181,38 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,050<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,050<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Aston Martin DBX707" data-price="$1,050" data-img="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Aston Martin DBX707"
+                        data-price="$1,050"
+                        data-img="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card electric hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card electric hypercar bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <span class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric Hyper</span>
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <span
+                            class="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase z-10">Electric
+                            Hyper</span>
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop" alt="Rimac Nevera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop"
+                            alt="Rimac Nevera"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Rimac Nevera</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Rimac Nevera
+                        </h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 1.81s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 1914 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 412 km/h</div>
@@ -891,25 +1222,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$2,800<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$2,800<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Rimac Nevera" data-price="$2,800" data-img="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Rimac Nevera"
+                        data-price="$2,800"
+                        data-img="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card sedan bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" alt="Maybach S 680" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop"
+                            alt="Maybach S 680"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Maybach S 680 V12</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Maybach S 680
+                            V12</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 4.5s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 621 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 250 km/h</div>
@@ -919,25 +1260,35 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,400<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,400<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Maybach S 680 V12" data-price="$1,400" data-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Maybach S 680 V12"
+                        data-price="$1,400"
+                        data-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
             </div>
 
-            <div class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
+            <div
+                class="car-card hypercar track bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden hover:border-brand/50 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                     <div class="relative h-48 overflow-hidden">
-                        <button onclick="toggleFav(this)" class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
+                        <button onclick="toggleFav(this)"
+                            class="fav-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-brand z-10 transition-colors">
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" alt="Ferrari 296 GTB" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop"
+                            alt="Ferrari 296 GTB"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Ferrari 296 GTB</h3>
-                        <div class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand transition-colors">Ferrari 296
+                            GTB</h3>
+                        <div
+                            class="grid grid-cols-3 gap-2 my-4 py-3 border-y border-[#262626] text-center text-xs text-gray-400">
                             <div><i class="fa-solid fa-gauge text-brand block mb-1"></i> 2.9s</div>
                             <div><i class="fa-solid fa-bolt text-brand block mb-1"></i> 819 HP</div>
                             <div><i class="fa-solid fa-flag-checkered text-brand block mb-1"></i> 330 km/h</div>
@@ -947,9 +1298,13 @@
                 <div class="p-5 pt-0 flex items-center justify-between">
                     <div>
                         <span class="text-xs text-gray-400 block">Starting from</span>
-                        <span class="text-xl font-black text-white">$1,300<span class="text-xs text-gray-400 font-normal"> / day</span></span>
+                        <span class="text-xl font-black text-white">$1,300<span
+                                class="text-xs text-gray-400 font-normal"> / day</span></span>
                     </div>
-                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Ferrari 296 GTB" data-price="$1,300" data-img="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop" class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
+                    <button data-modal-target="car-modal" data-modal-toggle="car-modal" data-car="Ferrari 296 GTB"
+                        data-price="$1,300"
+                        data-img="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=600&auto=format&fit=crop"
+                        class="rent-btn bg-brand text-black font-bold text-xs px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors">
                         Rent Now
                     </button>
                 </div>
@@ -963,42 +1318,54 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-brand text-xs font-bold tracking-widest uppercase">SELL YOUR CAR</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6">Get your price in 24 hours.</h2>
-                    
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6">Get your price in 24 hours.
+                    </h2>
+
                     <div class="space-y-6">
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">1</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">
+                                1</div>
                             <div>
                                 <h4 class="text-lg font-bold text-white">Direct & Instant Quote</h4>
-                                <p class="text-sm text-gray-400 mt-1">Submit your car's details and receive a competitive valuation from our team within hours.</p>
+                                <p class="text-sm text-gray-400 mt-1">Submit your car's details and receive a
+                                    competitive valuation from our team within hours.</p>
                             </div>
                         </div>
 
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">2</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">
+                                2</div>
                             <div>
                                 <h4 class="text-lg font-bold text-white">Free Vehicle Inspection</h4>
-                                <p class="text-sm text-gray-400 mt-1">We arrange a complimentary professional inspection at your preferred location or home.</p>
+                                <p class="text-sm text-gray-400 mt-1">We arrange a complimentary professional inspection
+                                    at your preferred location or home.</p>
                             </div>
                         </div>
 
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">3</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand font-bold shrink-0">
+                                3</div>
                             <div>
                                 <h4 class="text-lg font-bold text-white">Immediate Payment</h4>
-                                <p class="text-sm text-gray-400 mt-1">Instant wire transfer upon agreement with zero hidden fees or paperwork hassle.</p>
+                                <p class="text-sm text-gray-400 mt-1">Instant wire transfer upon agreement with zero
+                                    hidden fees or paperwork hassle.</p>
                             </div>
                         </div>
                     </div>
 
-                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="mt-8 bg-white hover:bg-gray-200 text-black font-extrabold text-sm px-8 py-3.5 rounded-xl transition-all">
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal"
+                        class="mt-8 bg-white hover:bg-gray-200 text-black font-extrabold text-sm px-8 py-3.5 rounded-xl transition-all">
                         Get Valuation Now
                     </button>
                 </div>
 
                 <div class="relative">
                     <div class="rounded-2xl overflow-hidden border border-[#333] shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop" alt="Car Keys Handover" class="w-full h-[400px] object-cover">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop"
+                            alt="Car Keys Handover" class="w-full h-[400px] object-cover">
                     </div>
                 </div>
             </div>
@@ -1014,42 +1381,54 @@
         <div id="accordion-collapse" data-accordion="collapse" class="max-w-3xl mx-auto space-y-4">
             <div class="bg-[#161616] border border-[#262626] rounded-xl overflow-hidden">
                 <h2 id="accordion-heading-1">
-                    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors" data-accordion-target="#accordion-body-1" aria-expanded="true" aria-controls="accordion-body-1">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors"
+                        data-accordion-target="#accordion-body-1" aria-expanded="true" aria-controls="accordion-body-1">
                         <span>What documents are required to rent a vehicle?</span>
                         <i data-accordion-icon class="fa-solid fa-chevron-down w-3 h-3 shrink-0"></i>
                     </button>
                 </h2>
                 <div id="accordion-body-1" class="hidden" aria-labelledby="accordion-heading-1">
                     <div class="p-5 border-t border-[#262626] text-sm text-gray-400 leading-relaxed">
-                        For local residents, a valid driver's license and ID card are required. For international visitors, a valid passport, home country driver's license, and International Driving Permit (IDP) are needed along with a credit card for security deposit.
+                        For local residents, a valid driver's license and ID card are required. For international
+                        visitors, a valid passport, home country driver's license, and International Driving Permit
+                        (IDP) are needed along with a credit card for security deposit.
                     </div>
                 </div>
             </div>
 
             <div class="bg-[#161616] border border-[#262626] rounded-xl overflow-hidden">
                 <h2 id="accordion-heading-2">
-                    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors" data-accordion-target="#accordion-body-2" aria-expanded="false" aria-controls="accordion-body-2">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors"
+                        data-accordion-target="#accordion-body-2" aria-expanded="false"
+                        aria-controls="accordion-body-2">
                         <span>Is door-to-door vehicle delivery included?</span>
                         <i data-accordion-icon class="fa-solid fa-chevron-down w-3 h-3 shrink-0"></i>
                     </button>
                 </h2>
                 <div id="accordion-body-2" class="hidden" aria-labelledby="accordion-heading-2">
                     <div class="p-5 border-t border-[#262626] text-sm text-gray-400 leading-relaxed">
-                        Yes! VELOCE offers complimentary white-glove doorstep delivery and pick-up services to hotels, private residences, and airport terminals across our active city zones.
+                        Yes! VELOCE offers complimentary white-glove doorstep delivery and pick-up services to hotels,
+                        private residences, and airport terminals across our active city zones.
                     </div>
                 </div>
             </div>
 
             <div class="bg-[#161616] border border-[#262626] rounded-xl overflow-hidden">
                 <h2 id="accordion-heading-3">
-                    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors" data-accordion-target="#accordion-body-3" aria-expanded="false" aria-controls="accordion-body-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-semibold text-left text-white hover:bg-[#202020] transition-colors"
+                        data-accordion-target="#accordion-body-3" aria-expanded="false"
+                        aria-controls="accordion-body-3">
                         <span>What insurance coverage is provided?</span>
                         <i data-accordion-icon class="fa-solid fa-chevron-down w-3 h-3 shrink-0"></i>
                     </button>
                 </h2>
                 <div id="accordion-body-3" class="hidden" aria-labelledby="accordion-heading-3">
                     <div class="p-5 border-t border-[#262626] text-sm text-gray-400 leading-relaxed">
-                        All rentals come with full comprehensive insurance with standard deductible. Full zero-deductible coverage can also be added during reservation checkout.
+                        All rentals come with full comprehensive insurance with standard deductible. Full
+                        zero-deductible coverage can also be added during reservation checkout.
                     </div>
                 </div>
             </div>
@@ -1078,14 +1457,18 @@
             </div>
 
             <div id="default-carousel" class="relative w-full max-w-4xl mx-auto mt-12" data-carousel="slide">
-                <div class="relative h-56 overflow-hidden rounded-2xl bg-[#161616] border border-[#262626] p-8 flex items-center">
-                    
+                <div
+                    class="relative h-56 overflow-hidden rounded-2xl bg-[#161616] border border-[#262626] p-8 flex items-center">
+
                     <div class="hidden duration-700 ease-in-out w-full" data-carousel-item>
                         <div class="flex flex-col items-center text-center">
                             <div class="text-brand mb-3">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
-                            <p class="text-gray-300 italic text-base md:text-lg">"VELOCE provided an flawless service. The Porsche GT3 RS was delivered directly to my hotel in immaculate condition."</p>
+                            <p class="text-gray-300 italic text-base md:text-lg">"VELOCE provided an flawless service.
+                                The Porsche GT3 RS was delivered directly to my hotel in immaculate condition."</p>
                             <span class="text-white font-bold text-sm mt-4">Julian Thomas — CEO, TechCorp</span>
                         </div>
                     </div>
@@ -1093,9 +1476,12 @@
                     <div class="hidden duration-700 ease-in-out w-full" data-carousel-item>
                         <div class="flex flex-col items-center text-center">
                             <div class="text-brand mb-3">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
-                            <p class="text-gray-300 italic text-base md:text-lg">"The buying process for my Ferrari SF90 was seamless. Fast inspection, fair valuation, and smooth paperwork!"</p>
+                            <p class="text-gray-300 italic text-base md:text-lg">"The buying process for my Ferrari SF90
+                                was seamless. Fast inspection, fair valuation, and smooth paperwork!"</p>
                             <span class="text-white font-bold text-sm mt-4">Sarah Williams — Entrepreneur</span>
                         </div>
                     </div>
@@ -1111,40 +1497,56 @@
                 <span class="text-brand text-xs font-bold tracking-widest uppercase">THE JOURNAL</span>
                 <h2 class="text-3xl font-extrabold text-white mt-1">Editorial Insights</h2>
             </div>
-            <a href="#" class="text-xs font-bold text-brand hover:underline uppercase tracking-wider">View All Articles <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            <a href="#" class="text-xs font-bold text-brand hover:underline uppercase tracking-wider">View All Articles
+                <i class="fa-solid fa-arrow-right ml-1"></i></a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
+            <article
+                class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
                 <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600&auto=format&fit=crop" alt="Coastal Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600&auto=format&fit=crop"
+                        alt="Coastal Drive"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-6">
                     <span class="text-[10px] text-brand font-bold uppercase tracking-widest">LIFESTYLE</span>
-                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">The Best Coastal Drives in Southern Europe</h3>
-                    <p class="text-sm text-gray-400 mt-2">Discover the open bends and breathtaking vistas of the Amalfi coast behind the wheel of a supercar.</p>
+                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">The Best
+                        Coastal Drives in Southern Europe</h3>
+                    <p class="text-sm text-gray-400 mt-2">Discover the open bends and breathtaking vistas of the Amalfi
+                        coast behind the wheel of a supercar.</p>
                 </div>
             </article>
 
-            <article class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
+            <article
+                class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
                 <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop" alt="Hybrid Performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=600&auto=format&fit=crop"
+                        alt="Hybrid Performance"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-6">
                     <span class="text-[10px] text-brand font-bold uppercase tracking-widest">TECH</span>
-                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">The Evolution of Hybrid Performance</h3>
-                    <p class="text-sm text-gray-400 mt-2">Exploring how modern hypercars combine raw twin-turbo V8 power with instant electric torque.</p>
+                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">The Evolution
+                        of Hybrid Performance</h3>
+                    <p class="text-sm text-gray-400 mt-2">Exploring how modern hypercars combine raw twin-turbo V8 power
+                        with instant electric torque.</p>
                 </div>
             </article>
 
-            <article class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
+            <article
+                class="bg-[#161616] border border-[#262626] rounded-2xl overflow-hidden group hover:border-brand/50 transition-colors">
                 <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop" alt="Classic Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
+                        alt="Classic Automotive"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-6">
                     <span class="text-[10px] text-brand font-bold uppercase tracking-widest">CLASSIC</span>
-                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">Investing in Classic Automotive Icons</h3>
-                    <p class="text-sm text-gray-400 mt-2">A guide for collectors on which vintage models are currently enjoying the strongest market value.</p>
+                    <h3 class="text-lg font-bold text-white mt-2 group-hover:text-brand transition-colors">Investing in
+                        Classic Automotive Icons</h3>
+                    <p class="text-sm text-gray-400 mt-2">A guide for collectors on which vintage models are currently
+                        enjoying the strongest market value.</p>
                 </div>
             </article>
         </div>
@@ -1154,8 +1556,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 <div>
-                    <span class="text-2xl font-black tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
-                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Redefining luxury automotive experiences through premium rentals and direct purchases worldwide.</p>
+                    <span class="text-2xl font-black tracking-widest text-white"><span
+                            class="text-brand">VELOCE</span></span>
+                    <p class="text-sm text-gray-400 mt-4 leading-relaxed">Redefining luxury automotive experiences
+                        through premium rentals and direct purchases worldwide.</p>
                     <div class="flex gap-4 mt-6 text-gray-400 text-lg">
                         <a href="#" class="hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" class="hover:text-brand"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1187,7 +1591,8 @@
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Newsletter</h4>
                     <p class="text-sm text-gray-400 mb-4">Subscribe for exclusive private fleet releases.</p>
                     <div class="flex">
-                        <input type="email" placeholder="Your email address" class="bg-[#161616] border border-[#262626] rounded-l-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand w-full">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-[#161616] border border-[#262626] rounded-l-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand w-full">
                         <button class="bg-brand text-black font-bold px-4 rounded-r-xl hover:bg-brand-hover">
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
@@ -1195,7 +1600,8 @@
                 </div>
             </div>
 
-            <div class="border-t border-[#262626] pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+            <div
+                class="border-t border-[#262626] pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
                 <p>© 2026 VELOCE Luxury Automotive Group. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-gray-300">Privacy Policy</a>
@@ -1204,36 +1610,49 @@
                 </div>
             </div>
         </div>
-        
+
     </footer>
 
-    <div id="auth-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div id="auth-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-[#161616] border border-[#262626] rounded-2xl shadow-2xl overflow-hidden">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b border-[#262626]">
-                    <h3 class="text-xl font-extrabold text-white">Access <span class="text-brand">VELOCE</span> Account</h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-[#262626] hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="auth-modal">
+                    <h3 class="text-xl font-extrabold text-white">Access <span class="text-brand">VELOCE</span> Account
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-[#262626] hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        data-modal-hide="auth-modal">
                         <i class="fa-solid fa-xmark text-lg"></i>
                     </button>
                 </div>
                 <div class="p-4 md:p-5">
                     <form class="space-y-4" action="#">
                         <div>
-                            <label for="email" class="block mb-2 text-xs font-semibold text-gray-300">Your Email Address</label>
-                            <input type="email" id="email" class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl focus:border-brand focus:ring-1 focus:ring-brand block w-full p-3" placeholder="name@company.com" required>
+                            <label for="email" class="block mb-2 text-xs font-semibold text-gray-300">Your Email
+                                Address</label>
+                            <input type="email" id="email"
+                                class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl focus:border-brand focus:ring-1 focus:ring-brand block w-full p-3"
+                                placeholder="name@company.com" required>
                         </div>
                         <div>
-                            <label for="password" class="block mb-2 text-xs font-semibold text-gray-300">Password</label>
-                            <input type="password" id="password" class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl focus:border-brand focus:ring-1 focus:ring-brand block w-full p-3" placeholder="••••••••" required>
+                            <label for="password"
+                                class="block mb-2 text-xs font-semibold text-gray-300">Password</label>
+                            <input type="password" id="password"
+                                class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl focus:border-brand focus:ring-1 focus:ring-brand block w-full p-3"
+                                placeholder="••••••••" required>
                         </div>
                         <div class="flex justify-between items-center text-xs">
                             <div class="flex items-center">
-                                <input id="remember" type="checkbox" class="w-4 h-4 rounded bg-[#0D0D0D] border-[#262626] text-brand focus:ring-brand">
+                                <input id="remember" type="checkbox"
+                                    class="w-4 h-4 rounded bg-[#0D0D0D] border-[#262626] text-brand focus:ring-brand">
                                 <label for="remember" class="ms-2 text-gray-400">Remember me</label>
                             </div>
                             <a href="#" class="text-brand hover:underline">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="w-full text-black bg-brand hover:bg-brand-hover font-bold rounded-xl text-sm px-5 py-3 text-center">Sign In</button>
+                        <button type="submit"
+                            class="w-full text-black bg-brand hover:bg-brand-hover font-bold rounded-xl text-sm px-5 py-3 text-center">Sign
+                            In</button>
                         <div class="text-xs font-medium text-gray-400 text-center mt-4">
                             Not registered yet? <a href="#" class="text-brand hover:underline">Create an account</a>
                         </div>
@@ -1243,37 +1662,46 @@
         </div>
     </div>
 
-    <div id="car-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div id="car-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-xl max-h-full">
             <div class="relative bg-[#161616] border border-[#262626] rounded-2xl shadow-2xl overflow-hidden">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b border-[#262626]">
                     <h3 id="modal-car-title" class="text-xl font-extrabold text-white">Car Booking</h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-[#262626] hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="car-modal">
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-[#262626] hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        data-modal-hide="car-modal">
                         <i class="fa-solid fa-xmark text-lg"></i>
                     </button>
                 </div>
                 <div class="p-6">
-                    <img id="modal-car-img" src="" alt="Car Image" class="w-full h-56 object-cover rounded-xl mb-6 border border-[#262626]">
+                    <img id="modal-car-img" src="" alt="Car Image"
+                        class="w-full h-56 object-cover rounded-xl mb-6 border border-[#262626]">
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <span class="text-xs text-gray-400 block">Daily Rate</span>
                             <span id="modal-car-price" class="text-2xl font-black text-brand">$0</span>
                         </div>
-                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-circle-check mr-1"></i> Available Now</span>
+                        <span
+                            class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1.5 rounded-full"><i
+                                class="fa-solid fa-circle-check mr-1"></i> Available Now</span>
                     </div>
 
                     <form class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold text-gray-300 mb-1">Pick-up Date</label>
-                                <input type="date" class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl p-3 w-full focus:border-brand">
+                                <input type="date"
+                                    class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl p-3 w-full focus:border-brand">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-gray-300 mb-1">Return Date</label>
-                                <input type="date" class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl p-3 w-full focus:border-brand">
+                                <input type="date"
+                                    class="bg-[#0D0D0D] border border-[#262626] text-white text-sm rounded-xl p-3 w-full focus:border-brand">
                             </div>
                         </div>
-                        <button type="button" data-modal-hide="car-modal" class="w-full bg-brand hover:bg-brand-hover text-black font-extrabold text-sm py-3.5 rounded-xl transition-all">
+                        <button type="button" data-modal-hide="car-modal"
+                            class="w-full bg-brand hover:bg-brand-hover text-black font-extrabold text-sm py-3.5 rounded-xl transition-all">
                             Confirm Reservation Request
                         </button>
                     </form>
@@ -1341,7 +1769,7 @@
             });
         });
     </script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
     <!-- Tablarning ma'nosiga qarab o'zgarishini ta'minlovchi JavaScript -->
     <script>
@@ -1349,7 +1777,7 @@
             const btnRent = document.getElementById('btn-rent');
             const btnBuy = document.getElementById('btn-buy');
             const btnSell = document.getElementById('btn-sell');
-            
+
             const dynamicLabel = document.getElementById('dynamic-label');
             const dynamicIcon = document.getElementById('dynamic-icon');
             const dynamicInput = document.getElementById('dynamic-input');
@@ -1384,4 +1812,5 @@
         }
     </script>
 </body>
+
 </html>
