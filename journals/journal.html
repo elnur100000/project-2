@@ -36,28 +36,75 @@
 </head>
 <body class="bg-brand-dark text-white antialiased min-h-screen flex flex-col justify-between">
 
-    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
-                    VELOCE<span class="text-brand">.</span>
-                </a>
-                <nav class="hidden nav-m:flex items-center gap-8 text-sm font-medium">
-                    <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Rent</a>
-                    <a href="../buy/buy.html" class="text-gray-400 hover:text-white transition-colors">Buy</a>
-                    <a href="../sell/sell.html" class="text-gray-400 hover:text-white transition-colors">Sell</a>
-                    <a href="../brand/brand.html" class="text-gray-400 hover:text-white transition-colors">Brands</a>
-                    <a href="./journal.html" class="text-brand font-bold border-b-2 border-brand pb-1">Journal</a>
-                </nav>
-                <div class="hidden nav-m:flex items-center gap-4">
-                    <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="bg-brand text-black font-bold px-5 py-2.5 rounded-full text-sm hover:bg-lime-400 transition-all">
-                        My Garage
-                    </button>
-                </div>
+  <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
+                VELOCE<span class="text-brand">.</span>
+            </a>
+
+            <!-- Desktop Navigation (lg va undan katta ekranlar uchun) -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Rent</a>
+                <a href="../buy/buy.html" class="text-gray-400 hover:text-white transition-colors">Buy</a>
+                <a href="../sell/sell.html" class="text-gray-400 hover:text-white transition-colors">Sell</a>
+                <a href="../brand/brand.html" class="text-gray-400 hover:text-white transition-colors">Brands</a>
+                <a href="./journal.html" class="text-brand font-bold border-b-2 border-brand pb-1">Journal</a>
+            </nav>
+
+            <!-- Desktop Action Button -->
+            <div class="hidden lg:flex items-center gap-4">
+                <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="bg-brand text-black font-bold px-5 py-2.5 rounded-full text-sm hover:bg-lime-400 transition-all">
+                    My Garage
+                </button>
+            </div>
+
+            <!-- Mobile & Tablet Menu Trigger (lg dan kichik ekranlar uchun) -->
+            <div class="flex lg:hidden items-center gap-3">
+                <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="bg-brand text-black font-bold px-3.5 py-2 rounded-full text-xs hover:bg-lime-400 transition-all">
+                    My Garage
+                </button>
+                <!-- Flowbite Drawer Trigger Button -->
+                <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                </button>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
+<!-- Flowbite Responsive Mobile Drawer Menu -->
+<div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-brand-dark w-80 border-r border-brand-border" tabindex="-1" aria-labelledby="drawer-navigation-label">
+    <!-- Drawer Header -->
+    <div class="flex items-center justify-between pb-6 border-b border-brand-border">
+        <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-1">
+            VELOCE<span class="text-brand">.</span>
+        </a>
+        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 hover:text-white rounded-lg text-sm p-1.5 inline-flex items-center">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+            <span class="sr-only">Close menu</span>
+        </button>
+    </div>
+
+    <!-- Drawer Navigation Links -->
+    <div class="py-6 border-b border-brand-border">
+        <nav class="flex flex-col space-y-4 text-base font-medium">
+            <a href="../index.html" class="text-gray-400 hover:text-white transition-colors py-1">Rent</a>
+            <a href="../buy/buy.html" class="text-gray-400 hover:text-white transition-colors py-1">Buy</a>
+            <a href="../sell/sell.html" class="text-gray-400 hover:text-white transition-colors py-1">Sell</a>
+            <a href="../brand/brand.html" class="text-gray-400 hover:text-white transition-colors py-1">Brands</a>
+            <a href="./journal.html" class="text-brand font-bold py-1">Journal</a>
+        </nav>
+    </div>
+
+    <!-- Drawer Footer / Extra Action -->
+    <div class="pt-6">
+        <button data-modal-target="register-modal" data-modal-toggle="register-modal" class="w-full bg-brand text-black font-bold px-5 py-3 rounded-full text-sm hover:bg-lime-400 transition-all text-center">
+            My Garage
+        </button>
+    </div>
+</div>
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow py-10">
         
         <!-- HEADER TITLE -->

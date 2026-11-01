@@ -65,107 +65,80 @@
 <body class="bg-[#0D0D0D] text-white antialiased custom-scrollbar">
 
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#262626]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            <!-- Logo va Desktop Menu -->
-            <div class="flex items-center gap-8">
-                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
-                    <span class="text-brand">VELOCE</span>
-                </a>
-                <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
-                    <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
-                    <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
-                    <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
-                    <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
-                    <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
-                </nav>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-8">
+                    <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
+                        <span class="text-brand">VELOCE</span>
+                    </a>
+                    <nav class="flex nav-m:hidden space-x-6 text-sm font-medium text-gray-300">
+                        <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
+                        <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
+                        <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
+                        <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
+                        <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
+                    </nav>
+                </div>
 
-            <!-- Desktop Action Buttons (md va undan yuqori displeylar uchun) -->
-            <div class="hidden md:flex items-center space-x-5">
-                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                    <i class="fa-solid fa-globe text-lg"></i>
-                </button>
-                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                </button>
-                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
-                    <i class="fa-regular fa-heart text-lg"></i>
-                    <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
-                </button>
-                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                    <i class="fa-solid fa-bag-shopping text-lg"></i>
-                </button>
-                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
-                    Account Access
-                </button>
-            </div>
+                <div class="hidden nav-m:flex items-center space-x-5">
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </button>
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
+                        <i class="fa-regular fa-heart text-lg"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
+                    </button>
+                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    </button>
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
+                        Account Access
+                    </button>
+                </div>
 
-            <!-- Mobile Controls (md dan kichik ekranlar uchun) -->
-            <div class="flex md:hidden items-center gap-3">
-                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
-                    Sign In
-                </button>
-                <!-- Flowbite Drawer Trigger -->
-                <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
-                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                <div class="flex nav-m:hidden items-center gap-3">
+                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
+                        Sign In
+                    </button>
+                    <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#161616] w-80 border-r border-[#262626]" tabindex="-1">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
+            <button type="button" data-drawer-hide="drawer-navigation" class="text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="py-4 overflow-y-auto">
+            <ul class="space-y-4 font-medium text-base">
+                <li><a href="#hero" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Rent</a></li>
+                <li><a href="#categories" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Buy</a></li>
+                <li><a href="#sell" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Sell Your Car</a></li>
+                <li><a href="#faq" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Top Brands</a></li>
+                <li><a href="#journal" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">The Journal</a></li>
+            </ul>
+            <div class="pt-8 border-t border-[#262626] mt-8">
+                <div class="grid grid-cols-4 gap-4 text-center text-lg text-gray-300 mb-6">
+                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-globe"></i></a>
+                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" data-drawer-hide="drawer-navigation" class="w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors">
+                    Sign In / Register
                 </button>
             </div>
         </div>
     </div>
-</header>
-
-<!-- Flowbite Responsive Mobile Drawer Menu -->
-<div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#0D0D0D] w-80 border-r border-[#262626]" tabindex="-1" aria-labelledby="drawer-navigation-label">
-    <div class="flex items-center justify-between pb-6 border-b border-[#262626]">
-        <a href="#" class="text-2xl font-black tracking-widest text-white">
-            <span class="text-brand">VELOCE</span>
-        </a>
-        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 hover:text-white rounded-lg text-sm p-1.5 inline-flex items-center">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-            <span class="sr-only">Close menu</span>
-        </button>
-    </div>
-
-    <!-- Mobile Navigation Links -->
-    <div class="py-6 border-b border-[#262626]">
-        <nav class="flex flex-col space-y-4 text-base font-medium text-gray-300">
-            <a href="#hero" class="hover:text-brand transition-colors py-1">Rent</a>
-            <a href="./buy/buy.html" class="hover:text-brand transition-colors py-1">Buy</a>
-            <a href="./sell/sell.html" class="hover:text-brand transition-colors py-1">Sell</a>
-            <a href="./brand/brand.html" class="hover:text-brand transition-colors py-1">Brands</a>
-            <a href="./journals/journal.html" class="hover:text-brand transition-colors py-1">Journal</a>
-        </nav>
-    </div>
-
-    <!-- Mobile Quick Actions Icons -->
-    <div class="py-6 flex items-center justify-between text-gray-300">
-        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
-            <i class="fa-solid fa-globe text-xl"></i>
-            <span>Language</span>
-        </button>
-        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
-            <i class="fa-solid fa-magnifying-glass text-xl"></i>
-            <span>Search</span>
-        </button>
-        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs relative">
-            <i class="fa-regular fa-heart text-xl"></i>
-            <span>Wishlist</span>
-            <span class="absolute top-2 right-3 w-2 h-2 bg-brand rounded-full"></span>
-        </button>
-        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
-            <i class="fa-solid fa-bag-shopping text-xl"></i>
-            <span>Cart</span>
-        </button>
-    </div>
-
-    <!-- Mobile Account Button -->
-    <div class="mt-4">
-        <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="w-full bg-brand text-black font-semibold text-sm px-5 py-3 rounded-full hover:bg-brand-hover transition-all text-center shadow-md">
-            Account Access
-        </button>
-    </div>
-</div>
 
  <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <!-- Orqa fon nurlanishi -->
