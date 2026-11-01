@@ -49,90 +49,132 @@
             scrollbar-width: none;  
         }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#CCFF00', // Rasmdagi och yashil/sariq brend rangi
+                        'brand-hover': '#b3e600',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-[#0D0D0D] text-white antialiased custom-scrollbar">
 
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b border-[#262626]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-8">
-                    <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
-                        <span class="text-brand">VELOCE</span>
-                    </a>
-                    <nav class="hidden nav-m:flex space-x-6 text-sm font-medium text-gray-300">
-                        <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
-                        <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
-                        <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
-                        <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
-                        <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
-                    </nav>
-                </div>
-
-                <div class="hidden nav-m:flex items-center space-x-5">
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-globe text-lg"></i>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
-                        <i class="fa-regular fa-heart text-lg"></i>
-                        <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
-                    </button>
-                    <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
-                        <i class="fa-solid fa-bag-shopping text-lg"></i>
-                    </button>
-                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
-                        Account Access
-                    </button>
-                </div>
-
-                <div class="flex nav-m:hidden items-center gap-3">
-                    <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
-                        Sign In
-                    </button>
-                    <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
-                    </button>
-                </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo va Desktop Menu -->
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
+                    <span class="text-brand">VELOCE</span>
+                </a>
+                <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
+                    <a href="#hero" class="hover:text-brand transition-colors">Rent</a>
+                    <a href="./buy/buy.html" class="hover:text-brand transition-colors">Buy</a>
+                    <a href="./sell/sell.html" class="hover:text-brand transition-colors">Sell</a>
+                    <a href="./brand/brand.html" class="hover:text-brand transition-colors">Brands</a>
+                    <a href="./journals/journal.html" class="hover:text-brand transition-colors">Journal</a>
+                </nav>
             </div>
-        </div>
-    </header>
 
-    <div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#161616] w-80 border-r border-[#262626]" tabindex="-1">
-        <div class="flex justify-between items-center mb-8">
-            <span class="text-xl font-bold tracking-widest text-white"><span class="text-brand">VELOCE</span></span>
-            <button type="button" data-drawer-hide="drawer-navigation" class="text-gray-400 hover:text-white text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <div class="py-4 overflow-y-auto">
-            <ul class="space-y-4 font-medium text-base">
-                <li><a href="#hero" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Rent</a></li>
-                <li><a href="#categories" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Buy</a></li>
-                <li><a href="#sell" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Sell Your Car</a></li>
-                <li><a href="#faq" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">Top Brands</a></li>
-                <li><a href="#journal" data-drawer-hide="drawer-navigation" class="block text-gray-300 hover:text-brand py-2">The Journal</a></li>
-            </ul>
-            <div class="pt-8 border-t border-[#262626] mt-8">
-                <div class="grid grid-cols-4 gap-4 text-center text-lg text-gray-300 mb-6">
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-globe"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-regular fa-heart"></i></a>
-                    <a href="#" class="p-2 bg-[#222] rounded-lg hover:text-brand"><i class="fa-solid fa-bag-shopping"></i></a>
-                </div>
-                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" data-drawer-hide="drawer-navigation" class="w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors">
-                    Sign In / Register
+            <!-- Desktop Action Buttons (md va undan yuqori displeylar uchun) -->
+            <div class="hidden md:flex items-center space-x-5">
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-globe text-lg"></i>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors relative">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-brand rounded-full"></span>
+                </button>
+                <button type="button" class="text-gray-300 hover:text-brand p-2 transition-colors">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                </button>
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-hover transition-all transform hover:scale-105 shadow-md">
+                    Account Access
+                </button>
+            </div>
+
+            <!-- Mobile Controls (md dan kichik ekranlar uchun) -->
+            <div class="flex md:hidden items-center gap-3">
+                <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="bg-brand text-black font-semibold text-xs px-3.5 py-2 rounded-full">
+                    Sign In
+                </button>
+                <!-- Flowbite Drawer Trigger -->
+                <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
                 </button>
             </div>
         </div>
     </div>
+</header>
 
-    <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+<!-- Flowbite Responsive Mobile Drawer Menu -->
+<div id="drawer-navigation" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-[#0D0D0D] w-80 border-r border-[#262626]" tabindex="-1" aria-labelledby="drawer-navigation-label">
+    <div class="flex items-center justify-between pb-6 border-b border-[#262626]">
+        <a href="#" class="text-2xl font-black tracking-widest text-white">
+            <span class="text-brand">VELOCE</span>
+        </a>
+        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 hover:text-white rounded-lg text-sm p-1.5 inline-flex items-center">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+            <span class="sr-only">Close menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <div class="py-6 border-b border-[#262626]">
+        <nav class="flex flex-col space-y-4 text-base font-medium text-gray-300">
+            <a href="#hero" class="hover:text-brand transition-colors py-1">Rent</a>
+            <a href="./buy/buy.html" class="hover:text-brand transition-colors py-1">Buy</a>
+            <a href="./sell/sell.html" class="hover:text-brand transition-colors py-1">Sell</a>
+            <a href="./brand/brand.html" class="hover:text-brand transition-colors py-1">Brands</a>
+            <a href="./journals/journal.html" class="hover:text-brand transition-colors py-1">Journal</a>
+        </nav>
+    </div>
+
+    <!-- Mobile Quick Actions Icons -->
+    <div class="py-6 flex items-center justify-between text-gray-300">
+        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
+            <i class="fa-solid fa-globe text-xl"></i>
+            <span>Language</span>
+        </button>
+        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
+            <i class="fa-solid fa-magnifying-glass text-xl"></i>
+            <span>Search</span>
+        </button>
+        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs relative">
+            <i class="fa-regular fa-heart text-xl"></i>
+            <span>Wishlist</span>
+            <span class="absolute top-2 right-3 w-2 h-2 bg-brand rounded-full"></span>
+        </button>
+        <button type="button" class="hover:text-brand p-2 transition-colors flex flex-col items-center gap-1 text-xs">
+            <i class="fa-solid fa-bag-shopping text-xl"></i>
+            <span>Cart</span>
+        </button>
+    </div>
+
+    <!-- Mobile Account Button -->
+    <div class="mt-4">
+        <button data-modal-target="auth-modal" data-modal-toggle="auth-modal" class="w-full bg-brand text-black font-semibold text-sm px-5 py-3 rounded-full hover:bg-brand-hover transition-all text-center shadow-md">
+            Account Access
+        </button>
+    </div>
+</div>
+
+ <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+        <!-- Orqa fon nurlanishi -->
         <div class="absolute inset-0 bg-gradient-to-b from-brand/5 via-transparent to-transparent pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <div class="flex justify-center items-center gap-8 mb-6 text-xs sm:text-sm text-gray-400 uppercase tracking-widest font-semibold">
+            <!-- Statistik ko'rsatkichlar -->
+            <div class="flex justify-center items-center gap-4 sm:gap-8 mb-6 text-xs sm:text-sm text-gray-400 uppercase tracking-widest font-semibold">
                 <div><span class="text-brand font-bold">1000+</span> Fleet Size</div>
                 <div>•</div>
                 <div><span class="text-brand font-bold">150+</span> Outlets Globally</div>
@@ -140,42 +182,98 @@
                 <div><span class="text-brand font-bold">99.8%</span> Happy Clients</div>
             </div>
 
+            <!-- Asosiy Sarlavha -->
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-4">
                 Drive the extraordinary.<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-brand">Rent it. Or own it.</span>
             </h1>
 
+            <!-- Flowbite Carousel (3 ta to'g'rilangan moshina rasmi) -->
             <div class="relative my-8 max-w-4xl mx-auto">
-                <div class="absolute -inset-1 bg-brand/20 rounded-3xl filter blur-2xl opacity-50"></div>
-                <div class="relative rounded-2xl overflow-hidden border border-[#333]">
-                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop" alt="Featured Porsche 911" class="w-full h-64 sm:h-96 object-cover object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-6 text-left">
-                        <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Featured</span>
-                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Porsche 911 GT3 RS</h3>
+                <div class="absolute -inset-1 bg-brand/10 rounded-3xl filter blur-2xl opacity-50"></div>
+                
+                <div id="default-carousel" class="relative w-full rounded-2xl overflow-hidden border border-[#333]" data-carousel="slide">
+                    <!-- Carousel Wrapper -->
+                    <div class="relative h-64 sm:h-96 overflow-hidden rounded-2xl bg-[#161616]">
+                        
+                        <!-- 1-Rasm (Ferrari F8 Tributo) -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Ferrari F8 Tributo">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6 text-left">
+                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Featured</span>
+                                <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Ferrari F8 Tributo</h3>
+                            </div>
+                        </div>
+
+                        <!-- 2-Rasm (Porsche 911 GT3 RS) -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Porsche 911 GT3 RS">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6 text-left">
+                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Supercar</span>
+                                <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Porsche 911 GT3 RS</h3>
+                            </div>
+                        </div>
+
+                        <!-- 3-Rasm (Lamborghini Aventador SVJ) -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop" class="absolute block w-full h-full object-cover object-center" alt="Lamborghini Aventador SVJ">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6 text-left">
+                                <span class="bg-brand text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase">Hypercar</span>
+                                <h3 class="text-xl sm:text-2xl font-bold mt-2 text-white">Lamborghini Aventador SVJ</h3>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <!-- Slider Indikatorlari (Nuqtalar) -->
+                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    </div>
+
+                    <!-- Oldinga / Orqaga tugmalari -->
+                    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </span>
+                    </button>
+                    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 text-white">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+                    </button>
                 </div>
             </div>
 
+            <!-- Qidiruv Formasi (Interaktiv Tabs bilan) -->
             <div class="max-w-4xl mx-auto bg-[#161616]/90 backdrop-blur-xl border border-[#262626] rounded-2xl p-4 sm:p-6 shadow-2xl">
+                
+                <!-- Tablar (Rent, Buy, Sell) -->
                 <div class="flex border-b border-[#262626] mb-6">
-                    <button class="px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2">
+                    <button onclick="setTab('rent')" id="btn-rent" class="px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-key"></i> Rent
                     </button>
-                    <button class="px-6 py-3 font-semibold text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                    <button onclick="setTab('buy')" id="btn-buy" class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-car"></i> Buy
                     </button>
-                    <button class="px-6 py-3 font-semibold text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                    <button onclick="setTab('sell')" id="btn-sell" class="px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all">
                         <i class="fa-solid fa-hand-holding-dollar"></i> Sell
                     </button>
                 </div>
 
+                <!-- Inputlar Qismi -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                    
+                    <!-- Joylashuv -->
                     <div class="bg-[#0D0D0D] p-3.5 rounded-xl border border-[#262626]">
                         <label class="block text-xs text-gray-400 font-medium mb-1">LOCATION</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
                             <i class="fa-solid fa-location-dot text-brand"></i>
-                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm">
+                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
                                 <option class="bg-[#161616]">Miami Int. Airport (MIA)</option>
                                 <option class="bg-[#161616]">Los Angeles (LAX)</option>
                                 <option class="bg-[#161616]">New York (JFK)</option>
@@ -184,19 +282,21 @@
                         </div>
                     </div>
 
+                    <!-- Dinamik Sana / Yil Maydoni -->
                     <div class="bg-[#0D0D0D] p-3.5 rounded-xl border border-[#262626]">
-                        <label class="block text-xs text-gray-400 font-medium mb-1">DATES</label>
+                        <label id="dynamic-label" class="block text-xs text-gray-400 font-medium mb-1">PICKUP DATE</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
-                            <i class="fa-regular fa-calendar-days text-brand"></i>
-                            <input type="text" value="24 Oct - 28 Oct" class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm">
+                            <i id="dynamic-icon" class="fa-regular fa-calendar-days text-brand"></i>
+                            <input id="dynamic-input" type="date" class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer [color-scheme:dark]">
                         </div>
                     </div>
 
+                    <!-- Mashina Turi -->
                     <div class="bg-[#0D0D0D] p-3.5 rounded-xl border border-[#262626]">
                         <label class="block text-xs text-gray-400 font-medium mb-1">CAR TYPE</label>
                         <div class="flex items-center gap-2 text-sm font-semibold">
                             <i class="fa-solid fa-sliders text-brand"></i>
-                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm">
+                            <select class="bg-transparent w-full text-white focus:outline-none border-none p-0 text-sm cursor-pointer">
                                 <option class="bg-[#161616]">All Categories</option>
                                 <option class="bg-[#161616]">Supercars</option>
                                 <option class="bg-[#161616]">Luxury SUVs</option>
@@ -205,15 +305,19 @@
                         </div>
                     </div>
 
-                    <button class="bg-brand hover:bg-brand-hover text-black font-bold h-full min-h-[50px] rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]">
+                    <!-- Qidirish Tugmasi -->
+                    <a href="./porshe search/porshe.html" id="search-action-btn" class="bg-brand hover:bg-brand-hover text-black font-bold h-full min-h-[50px] rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02]">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <a href="./porshe search/porshe.html">Search Cars</a>
-                    </button>
+                        <span>Search Cars</span>
+                    </a>
+
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Flowbite JS CDN -->
+ 
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -1263,6 +1367,48 @@
                 });
             });
         });
+    </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <!-- Tablarning ma'nosiga qarab o'zgarishini ta'minlovchi JavaScript -->
+    <script>
+        function setTab(type) {
+            const btnRent = document.getElementById('btn-rent');
+            const btnBuy = document.getElementById('btn-buy');
+            const btnSell = document.getElementById('btn-sell');
+            
+            const dynamicLabel = document.getElementById('dynamic-label');
+            const dynamicIcon = document.getElementById('dynamic-icon');
+            const dynamicInput = document.getElementById('dynamic-input');
+            const searchActionBtn = document.getElementById('search-action-btn');
+
+            // Barcha tugmalarni oddiy holatga keltirish
+            [btnRent, btnBuy, btnSell].forEach(b => {
+                b.className = "px-6 py-3 font-semibold text-sm text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 transition-all";
+            });
+
+            if (type === 'rent') {
+                btnRent.className = "px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all";
+                dynamicLabel.innerText = "PICKUP DATE";
+                dynamicIcon.className = "fa-regular fa-calendar-days text-brand";
+                dynamicInput.type = "date";
+                searchActionBtn.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> <span>Search Rentals</span>`;
+            } else if (type === 'buy') {
+                btnBuy.className = "px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all";
+                dynamicLabel.innerText = "YEAR MODEL";
+                dynamicIcon.className = "fa-solid fa-car text-brand";
+                dynamicInput.type = "text";
+                dynamicInput.placeholder = "e.g. 2023 - 2026";
+                searchActionBtn.innerHTML = `<i class="fa-solid fa-car"></i> <span>Browse Buy Cars</span>`;
+            } else if (type === 'sell') {
+                btnSell.className = "px-6 py-3 font-semibold text-sm border-b-2 border-brand text-brand flex items-center gap-2 transition-all";
+                dynamicLabel.innerText = "YOUR CAR YEAR";
+                dynamicIcon.className = "fa-solid fa-hand-holding-dollar text-brand";
+                dynamicInput.type = "text";
+                dynamicInput.placeholder = "Enter car year";
+                searchActionBtn.innerHTML = `<i class="fa-solid fa-hand-holding-dollar"></i> <span>Get Valuation</span>`;
+            }
+        }
     </script>
 </body>
 </html>
